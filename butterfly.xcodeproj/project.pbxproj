@@ -13,6 +13,7 @@
 		271503141AB3D1A500C99C42 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 271503131AB3D1A500C99C42 /* Images.xcassets */; };
 		271503171AB3D1A500C99C42 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 271503151AB3D1A500C99C42 /* LaunchScreen.xib */; };
 		271503231AB3D1A600C99C42 /* butterflyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271503221AB3D1A600C99C42 /* butterflyTests.swift */; };
+		274BD766C2481AF61892DC6A /* Pods_butterflyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A49BB8426AAB58A3B5B9ACC /* Pods_butterflyTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,9 @@
 		2715031C1AB3D1A600C99C42 /* butterflyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = butterflyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		271503211AB3D1A600C99C42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		271503221AB3D1A600C99C42 /* butterflyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = butterflyTests.swift; sourceTree = "<group>"; };
+		2A49BB8426AAB58A3B5B9ACC /* Pods_butterflyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_butterflyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2DA9F080EAD27EC685A1D6B0 /* Pods-butterflyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-butterflyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-butterflyTests/Pods-butterflyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D0D5154429E1225B5E083AAC /* Pods-butterflyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-butterflyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-butterflyTests/Pods-butterflyTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				274BD766C2481AF61892DC6A /* Pods_butterflyTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +67,8 @@
 				271503091AB3D1A500C99C42 /* butterfly */,
 				2715031F1AB3D1A600C99C42 /* butterflyTests */,
 				271503081AB3D1A500C99C42 /* Products */,
+				71784C3FD282F31555E790ED /* Pods */,
+				746089FB8D44BA88304A868D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,6 +119,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		71784C3FD282F31555E790ED /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2DA9F080EAD27EC685A1D6B0 /* Pods-butterflyTests.debug.xcconfig */,
+				D0D5154429E1225B5E083AAC /* Pods-butterflyTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		746089FB8D44BA88304A868D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2A49BB8426AAB58A3B5B9ACC /* Pods_butterflyTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -136,9 +160,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 271503291AB3D1A600C99C42 /* Build configuration list for PBXNativeTarget "butterflyTests" */;
 			buildPhases = (
+				40796980CB50F01C6DB0104F /* Check Pods Manifest.lock */,
 				271503181AB3D1A600C99C42 /* Sources */,
 				271503191AB3D1A600C99C42 /* Frameworks */,
 				2715031A1AB3D1A600C99C42 /* Resources */,
+				1130E2499470D14735F75580 /* Embed Pods Frameworks */,
+				3E0D339A5CE2CCD8B6A3A6F1 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -206,6 +233,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1130E2499470D14735F75580 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-butterflyTests/Pods-butterflyTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3E0D339A5CE2CCD8B6A3A6F1 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-butterflyTests/Pods-butterflyTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		40796980CB50F01C6DB0104F /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		271503031AB3D1A500C99C42 /* Sources */ = {
@@ -291,7 +366,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -329,7 +404,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -358,6 +433,7 @@
 		};
 		2715032A1AB3D1A600C99C42 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2DA9F080EAD27EC685A1D6B0 /* Pods-butterflyTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -377,6 +453,7 @@
 		};
 		2715032B1AB3D1A600C99C42 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0D5154429E1225B5E083AAC /* Pods-butterflyTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
