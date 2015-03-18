@@ -1,7 +1,7 @@
 import Quick
 import Nimble
 
-class butterflyTests: QuickSpec {
+class EntryVcSpec: QuickSpec {
     override func spec() {
         it("foo") {
             expect(false).to(beTruthy())
