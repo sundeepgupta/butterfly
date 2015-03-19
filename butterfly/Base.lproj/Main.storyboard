@@ -38,18 +38,31 @@
                                     <action selector="save" destination="vXZ-lx-hvc" eventType="touchUpInside" id="6m5-YI-nX5"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fny-Bm-TVP">
+                                <rect key="frame" x="0.0" y="220" width="320" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="jyr-3I-tEL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="O04-NJ-QiP" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="8UW-Hp-ojY"/>
                             <constraint firstItem="O04-NJ-QiP" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="20" id="BHO-Wo-oou"/>
+                            <constraint firstItem="Fny-Bm-TVP" firstAttribute="top" secondItem="FmN-q3-8Ih" secondAttribute="bottom" constant="17" id="Ocf-X6-idC"/>
                             <constraint firstAttribute="trailing" secondItem="O04-NJ-QiP" secondAttribute="trailing" id="Thb-jN-hbr"/>
+                            <constraint firstAttribute="trailing" secondItem="Fny-Bm-TVP" secondAttribute="trailing" id="ecF-nS-fOn"/>
                             <constraint firstAttribute="centerX" secondItem="FmN-q3-8Ih" secondAttribute="centerX" id="lsU-gp-zou"/>
+                            <constraint firstItem="Fny-Bm-TVP" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="t9a-GS-LcV"/>
                             <constraint firstItem="FmN-q3-8Ih" firstAttribute="top" secondItem="O04-NJ-QiP" secondAttribute="bottom" constant="17" id="uPy-UT-iav"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="statusLabel" destination="Fny-Bm-TVP" id="m6Q-3b-uRH"/>
                         <outlet property="textView" destination="O04-NJ-QiP" id="F3r-Cf-6PT"/>
                     </connections>
                 </viewController>

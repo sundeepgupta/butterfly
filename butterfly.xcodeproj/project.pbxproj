@@ -15,6 +15,7 @@
 		271BFA6A1AB3E04100C151F9 /* EntryVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271BFA691AB3E04100C151F9 /* EntryVc.swift */; };
 		274BD766C2481AF61892DC6A /* Pods_butterflyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A49BB8426AAB58A3B5B9ACC /* Pods_butterflyTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		275D064D1AB910DF0071A509 /* PostOfficeSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275D064B1AB9108C0071A509 /* PostOfficeSpec.swift */; };
+		2775852C1ABA4FB400EAF726 /* PostOffice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277DC7231AB7CBC6006AABD9 /* PostOffice.swift */; };
 		277DC7241AB7CBC6006AABD9 /* PostOffice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277DC7231AB7CBC6006AABD9 /* PostOffice.swift */; };
 /* End PBXBuildFile section */
 
@@ -307,6 +308,7 @@
 			files = (
 				275D064D1AB910DF0071A509 /* PostOfficeSpec.swift in Sources */,
 				271503231AB3D1A600C99C42 /* EntryVcSpec.swift in Sources */,
+				2775852C1ABA4FB400EAF726 /* PostOffice.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -2,11 +2,9 @@ import Quick
 import Nimble
 
 class PostOfficeSpec: QuickSpec {
-//    it("calls success") {
-//        
-//    }
-//    
-//    it("calls failure") {
-//    
-//    }
+    override func spec() {
+        it("sends mail") {
+
+        }
+    }
 }
