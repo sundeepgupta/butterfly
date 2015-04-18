@@ -14,4 +14,5 @@ public class EntryVc: UIViewController {
         }
         postOffice.sendMail("saving message", success: success, failure: error)
     }
+
 }

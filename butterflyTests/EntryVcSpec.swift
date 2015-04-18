@@ -3,19 +3,28 @@ import Nimble
 import butterfly
 
 class EntryVcSpec: QuickSpec {
-    
-
-    
     override func spec() {
-        it("saves the memory") {
+        var subject: EntryVc!
+        
+        beforeEach {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let navigationController = storyboard.instantiateInitialViewController() as! UINavigationController
-            let subject = navigationController.viewControllers[0] as! EntryVc
+            subject = navigationController.viewControllers[0] as! EntryVc
+        }
+        
+        context("Action connections") {
+            it("connects the done button") {
+                let button = subject.navigationItem.rightBarButtonItem
+                expect(button?.action).to(equal("save:"))
+            }
             
-            let doneButton = subject.navigationItem.rightBarButtonItem
-            let selector = doneButton?.action
-            
-            expect(selector).to(equal("save:"))
+            it("connects the settings button") {
+                let button = subject.navigationItem.leftBarButtonItem
+                expect(button?.action).to(equal("perform:"))
+                
+                // Don't know how to actually test if the correct VC gets loaded yet so 
+                // checking to make sure it's hooked up to a segue at least.
+            }
         }
     }
 }

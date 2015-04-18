@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <scenes>
-        <!--Entry Vc-->
+        <!--New Memory-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="vXZ-lx-hvc" customClass="EntryVc" customModule="butterfly" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="New Memory" automaticallyAdjustsScrollViewInsets="NO" id="vXZ-lx-hvc" customClass="EntryVc" customModule="butterfly" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -46,6 +46,11 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="ZA9-kf-N8d">
+                        <barButtonItem key="leftBarButtonItem" title="Settings" id="Q68-sj-UXU">
+                            <connections>
+                                <segue destination="EQa-49-WTz" kind="presentation" animates="NO" id="nhs-R4-Szt"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="bHV-44-tzP">
                             <connections>
                                 <action selector="save:" destination="vXZ-lx-hvc" id="JZX-13-rqP"/>
@@ -59,6 +64,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1143" y="431"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="fc5-3T-ULM">
+            <objects>
+                <viewController title="Settings" id="2UK-Oj-E2K" customClass="SettingsVc" customModule="butterfly" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KhV-ir-AQN"/>
+                        <viewControllerLayoutGuide type="bottom" id="52P-4D-JdT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UGo-WE-ZrR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ZJW-KP-tMC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wGh-wx-8vU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1888" y="-106"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="YDc-pd-rG2">
@@ -78,6 +102,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X76-tl-U61" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="759" y="431"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="nAu-eK-XgH">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EQa-49-WTz" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kBy-au-3jg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2UK-Oj-E2K" kind="relationship" relationship="rootViewController" id="wNh-LM-BoC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pvv-KU-EPd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1509" y="-106"/>
         </scene>
     </scenes>
 </document>
