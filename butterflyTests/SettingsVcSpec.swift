@@ -12,8 +12,8 @@ class SettingsVcSpec: QuickSpec {
             subject = storyboard.instantiateViewControllerWithIdentifier(name) as! SettingsVc
         }
         
-        context("Action connections.") {
-            it("connects the save button.") {
+        context("IB connections.") {
+            it("Connects the save button.") {
                 let button = subject.navigationItem.rightBarButtonItem
                 let selector: Selector = "save"
                 
@@ -21,20 +21,32 @@ class SettingsVcSpec: QuickSpec {
                 expect(subject.respondsToSelector(selector)).to(beTrue())
             }
             
-            it("connects the cancel button.") {
+            it("Connects the cancel button.") {
                 let button = subject.navigationItem.leftBarButtonItem
                 let selector: Selector = "cancel"
                 
                 expect(button?.action).to(equal("cancel"))
                 expect(subject.respondsToSelector(selector)).to(beTrue())
             }
-        }
-        
-        context("Outlet connections.") {
+            
             it("Connects its outlets.") {
                 subject.loadView()
                 expect(subject.emailField).toNot(beNil())
             }
         }
+        
+        context("Email") {
+            it("Renders the currently configured email") {
+                let email = "some@email.com"
+                Settings().saveEmail(email)
+                
+                subject.loadView()
+                subject.viewDidLoad()
+                
+                expect(subject.emailField.text).to(equal(email))
+            }
+        }
+        
+        
     }
 }

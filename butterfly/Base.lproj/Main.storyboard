@@ -48,7 +48,7 @@
                     <navigationItem key="navigationItem" id="ZA9-kf-N8d">
                         <barButtonItem key="leftBarButtonItem" title="Settings" id="Q68-sj-UXU">
                             <connections>
-                                <segue destination="EQa-49-WTz" kind="presentation" animates="NO" id="nhs-R4-Szt"/>
+                                <segue destination="EQa-49-WTz" kind="presentation" id="nhs-R4-Szt"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="0sH-ho-TfG">
