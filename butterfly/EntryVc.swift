@@ -1,13 +1,13 @@
 import UIKit
 
-class EntryVc: UIViewController {
+public class EntryVc: UIViewController {
     @IBOutlet weak var textView: UITextView!
-    @IBOutlet weak var statusLabel: UILabel!
     
-    @IBAction func save() {
+    
+    @IBAction func save(sender: AnyObject) {
         let postOffice = PostOffice()
         let success = {
-            self.statusLabel.text = "Sent!"
+            println("success")
         }
         let error = {(errorMessage: String) in
             println(errorMessage)
