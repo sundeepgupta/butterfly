@@ -15,7 +15,7 @@ class EntryVcSpec: QuickSpec {
         context("Action connections") {
             it("connects the done button") {
                 let button = subject.navigationItem.rightBarButtonItem
-                expect(button?.action).to(equal("save:"))
+                expect(button?.action).to(equal("submit"))
             }
             
             it("connects the settings button") {

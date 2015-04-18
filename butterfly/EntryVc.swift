@@ -3,8 +3,8 @@ import UIKit
 public class EntryVc: UIViewController {
     @IBOutlet weak var textView: UITextView!
     
-    
-    @IBAction func save(sender: AnyObject) {
+    @IBAction func submit() {
+        println("submit")
         let postOffice = PostOffice()
         let success = {
             println("success")
@@ -14,5 +14,5 @@ public class EntryVc: UIViewController {
         }
         postOffice.sendMail("saving message", success: success, failure: error)
     }
-
+        
 }

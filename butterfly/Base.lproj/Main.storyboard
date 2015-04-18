@@ -51,9 +51,9 @@
                                 <segue destination="EQa-49-WTz" kind="presentation" animates="NO" id="nhs-R4-Szt"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="bHV-44-tzP">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="0sH-ho-TfG">
                             <connections>
-                                <action selector="save:" destination="vXZ-lx-hvc" id="JZX-13-rqP"/>
+                                <action selector="submit" destination="vXZ-lx-hvc" id="muf-hk-hGc"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -78,7 +78,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ZJW-KP-tMC"/>
+                    <navigationItem key="navigationItem" id="ZJW-KP-tMC">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="23X-ny-gSs"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wGh-wx-8vU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
