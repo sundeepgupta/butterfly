@@ -46,7 +46,5 @@ class SettingsVcSpec: QuickSpec {
                 expect(subject.emailField.text).to(equal(email))
             }
         }
-        
-        
     }
 }
