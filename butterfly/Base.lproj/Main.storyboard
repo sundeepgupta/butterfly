@@ -68,7 +68,7 @@
         <!--Settings-->
         <scene sceneID="fc5-3T-ULM">
             <objects>
-                <viewController title="Settings" id="2UK-Oj-E2K" customClass="SettingsVc" customModule="butterfly" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsVc" title="Settings" id="2UK-Oj-E2K" customClass="SettingsVc" customModule="butterfly" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KhV-ir-AQN"/>
                         <viewControllerLayoutGuide type="bottom" id="52P-4D-JdT"/>
@@ -79,7 +79,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="ZJW-KP-tMC">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="23X-ny-gSs"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="PYh-Cd-Azh">
+                            <connections>
+                                <action selector="cancel" destination="2UK-Oj-E2K" id="EMd-cT-sRJ"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="23X-ny-gSs">
+                            <connections>
+                                <action selector="save" destination="2UK-Oj-E2K" id="B3w-Kg-SpR"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wGh-wx-8vU" userLabel="First Responder" sceneMemberID="firstResponder"/>

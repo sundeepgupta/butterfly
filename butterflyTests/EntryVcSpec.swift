@@ -7,7 +7,7 @@ class EntryVcSpec: QuickSpec {
         var subject: EntryVc!
         
         beforeEach {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let storyboard = UIStoryboard(name: Constants.storyboardName, bundle: nil)
             let navigationController = storyboard.instantiateInitialViewController() as! UINavigationController
             subject = navigationController.viewControllers[0] as! EntryVc
         }
