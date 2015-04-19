@@ -5,14 +5,15 @@ public class EntryVc: UIViewController {
     
     @IBAction func submit() {
         let success = {
-            println("success")
+            Alert(title: "Success!", message: "Your memory was emailed to you :)", showIn: self).show()
         }
         
-//        let error = {(errorMessage: String) in
-//            println(errorMessage)
-//        }
-//        
-//        SendMail().perform(self.textView.text, success: success, failure: error)
+        let failure = { (error: NSError) -> Void in
+            let message = "The email could not be sent.\n\n\(error.userInfo![Constants.errorHashKey])"
+            Alert(title: "Darn it!", message: message, showIn: self).show()
+        }
+        
+        SendMail().perform(self.textView.text, success: success, failure: failure)
     }
         
 }

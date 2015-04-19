@@ -36,10 +36,7 @@ public struct SendMail {
                         success()
                     } else {
                         let appName = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleName") as! String
-                        let userInfo: [NSObject: AnyObject] = [
-                            NSLocalizedDescriptionKey: "Whoops! There was an unkown error while trying to send the email.",
-                            Constants.errorHashKey : hash
-                        ]
+                        let userInfo: [NSObject: AnyObject] = [Constants.errorHashKey : hash]
                         
                         let error = NSError(domain: appName, code: 1, userInfo: userInfo)
                         failure(error)

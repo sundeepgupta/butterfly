@@ -19,7 +19,8 @@
 		271BFA6A1AB3E04100C151F9 /* EntryVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271BFA691AB3E04100C151F9 /* EntryVc.swift */; };
 		274BD766C2481AF61892DC6A /* Pods_butterflyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A49BB8426AAB58A3B5B9ACC /* Pods_butterflyTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		27576B4E1AE2B4AE00D15F32 /* SettingsVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27576B4D1AE2B4AE00D15F32 /* SettingsVc.swift */; };
-		2775852C1ABA4FB400EAF726 /* SendMail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277DC7231AB7CBC6006AABD9 /* SendMail.swift */; };
+		277C74931AE3DFFD007C2808 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277C74921AE3DFFD007C2808 /* Alert.swift */; };
+		277C74951AE3E031007C2808 /* AlertSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277C74941AE3E031007C2808 /* AlertSpec.swift */; };
 		277DC7241AB7CBC6006AABD9 /* SendMail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277DC7231AB7CBC6006AABD9 /* SendMail.swift */; };
 		27E1F6221AE2E01900FC6475 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E1F6211AE2E01900FC6475 /* Constants.swift */; };
 /* End PBXBuildFile section */
@@ -49,6 +50,8 @@
 		271503221AB3D1A600C99C42 /* EntryVcSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryVcSpec.swift; sourceTree = "<group>"; };
 		271BFA691AB3E04100C151F9 /* EntryVc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryVc.swift; sourceTree = "<group>"; };
 		27576B4D1AE2B4AE00D15F32 /* SettingsVc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVc.swift; sourceTree = "<group>"; };
+		277C74921AE3DFFD007C2808 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		277C74941AE3E031007C2808 /* AlertSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertSpec.swift; sourceTree = "<group>"; };
 		277DC7231AB7CBC6006AABD9 /* SendMail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendMail.swift; sourceTree = "<group>"; };
 		27E1F61F1AE2DF6C00FC6475 /* SettingsVcSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVcSpec.swift; sourceTree = "<group>"; };
 		27E1F6211AE2E01900FC6475 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -84,6 +87,7 @@
 				71784C3FD282F31555E790ED /* Pods */,
 				271503081AB3D1A500C99C42 /* Products */,
 				2715031F1AB3D1A600C99C42 /* Specs */,
+				271503201AB3D1A600C99C42 /* Supporting Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,16 +103,12 @@
 		271503091AB3D1A500C99C42 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				27C6DEB61AE3323200C16E64 /* Services */,
-				27C6DEB51AE3320E00C16E64 /* Views */,
 				2715030C1AB3D1A500C99C42 /* AppDelegate.swift */,
-				271503101AB3D1A500C99C42 /* Main.storyboard */,
-				271503131AB3D1A500C99C42 /* Images.xcassets */,
-				271503151AB3D1A500C99C42 /* LaunchScreen.xib */,
+				277C74911AE3DF9C007C2808 /* Helpers */,
+				277C74901AE3DF69007C2808 /* Resources */,
+				27C6DEB61AE3323200C16E64 /* Services */,
 				2715030A1AB3D1A500C99C42 /* Supporting Files */,
-				27E1F6211AE2E01900FC6475 /* Constants.swift */,
-				271419851AE2E68600FEAD0A /* Utils.swift */,
-				271419871AE3072000FEAD0A /* Settings.swift */,
+				27C6DEB51AE3320E00C16E64 /* Views */,
 			);
 			name = App;
 			path = butterfly;
@@ -126,9 +126,9 @@
 			isa = PBXGroup;
 			children = (
 				271503221AB3D1A600C99C42 /* EntryVcSpec.swift */,
-				271503201AB3D1A600C99C42 /* Supporting Files */,
 				27E1F61F1AE2DF6C00FC6475 /* SettingsVcSpec.swift */,
 				271419891AE3079B00FEAD0A /* SettingsSpec.swift */,
+				277C74941AE3E031007C2808 /* AlertSpec.swift */,
 			);
 			name = Specs;
 			path = butterflyTests;
@@ -140,11 +140,31 @@
 				271503211AB3D1A600C99C42 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			path = butterflyTests;
+			sourceTree = "<group>";
+		};
+		277C74901AE3DF69007C2808 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				271503131AB3D1A500C99C42 /* Images.xcassets */,
+				271503151AB3D1A500C99C42 /* LaunchScreen.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		277C74911AE3DF9C007C2808 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				27E1F6211AE2E01900FC6475 /* Constants.swift */,
+				271419851AE2E68600FEAD0A /* Utils.swift */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 		27C6DEB51AE3320E00C16E64 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				271503101AB3D1A500C99C42 /* Main.storyboard */,
 				271BFA691AB3E04100C151F9 /* EntryVc.swift */,
 				27576B4D1AE2B4AE00D15F32 /* SettingsVc.swift */,
 			);
@@ -154,7 +174,9 @@
 		27C6DEB61AE3323200C16E64 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				271419871AE3072000FEAD0A /* Settings.swift */,
 				277DC7231AB7CBC6006AABD9 /* SendMail.swift */,
+				277C74921AE3DFFD007C2808 /* Alert.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -333,6 +355,7 @@
 				271BFA6A1AB3E04100C151F9 /* EntryVc.swift in Sources */,
 				271419881AE3072000FEAD0A /* Settings.swift in Sources */,
 				277DC7241AB7CBC6006AABD9 /* SendMail.swift in Sources */,
+				277C74931AE3DFFD007C2808 /* Alert.swift in Sources */,
 				271419861AE2E68600FEAD0A /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -342,8 +365,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				271419841AE2E19100FEAD0A /* SettingsVcSpec.swift in Sources */,
+				277C74951AE3E031007C2808 /* AlertSpec.swift in Sources */,
 				271503231AB3D1A600C99C42 /* EntryVcSpec.swift in Sources */,
-				2775852C1ABA4FB400EAF726 /* SendMail.swift in Sources */,
 				2714198B1AE307D200FEAD0A /* SettingsSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
