@@ -3,6 +3,11 @@ import UIKit
 public class EntryVc: UIViewController {
     @IBOutlet private(set) public weak var textView: UITextView!
     
+    public override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.textView.becomeFirstResponder()
+    }
+    
     @IBAction func submit() {
         let success = {
             Alert(title: "Success!", message: "Your memory was emailed to you :)", showIn: self).show()
