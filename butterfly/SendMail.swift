@@ -1,8 +1,8 @@
 import Foundation
 
-struct PostOffice {
+public struct SendMail {
     
-    func sendMail(body: String, success: (() -> ()), failure: (String -> ())) {
+    public func perform(body: String, success: (() -> ()), failure: (String -> ())) {
         let session = NSURLSession.sharedSession()
         
         let url = NSURL(string: "https://mandrillapp.com/api/1.0/messages/send.json")!
@@ -42,6 +42,7 @@ struct PostOffice {
         task.resume()
     }
     
+    // MARK: Private
     private func convertDataToHash(data: NSData) -> Dictionary<String, AnyObject> {
         let responseObject: AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil)
         var responseHash = [String: AnyObject]()

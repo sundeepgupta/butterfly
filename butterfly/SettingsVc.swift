@@ -1,7 +1,7 @@
 import UIKit
 
 public class SettingsVc: UIViewController {
-    @IBOutlet public weak var emailField: UITextField!
+    @IBOutlet private(set) public weak var emailField: UITextField!
     let settings = Settings()
     
     public override func viewDidLoad() {

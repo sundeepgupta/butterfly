@@ -12,7 +12,7 @@ class EntryVcSpec: QuickSpec {
             subject = navigationController.viewControllers[0] as! EntryVc
         }
         
-        context("Action connections") {
+        context("IB connections") {
             it("connects the done button") {
                 let button = subject.navigationItem.rightBarButtonItem
                 let selector: Selector = "submit"
@@ -28,6 +28,12 @@ class EntryVcSpec: QuickSpec {
                 // Don't know how to actually test if the correct VC gets loaded yet so 
                 // checking to make sure it's hooked up to a segue at least.
             }
+            
+            it("connects the text view") {
+                subject.loadView()
+                expect(subject.textView).toNot(beNil())
+            }
+
         }
     }
 }
