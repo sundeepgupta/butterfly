@@ -7,6 +7,7 @@ public class SettingsVc: UIViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
         self.loadEmail()
+        self.emailField.becomeFirstResponder()
     }
     
     @IBAction func save() {
