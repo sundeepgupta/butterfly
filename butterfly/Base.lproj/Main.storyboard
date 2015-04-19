@@ -58,6 +58,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="bottomConstraint" destination="e2A-Tv-yeS" id="hee-QJ-mj6"/>
                         <outlet property="textView" destination="O04-NJ-QiP" id="F3r-Cf-6PT"/>
                     </connections>
                 </viewController>

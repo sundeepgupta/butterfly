@@ -10,4 +10,8 @@ public struct Utils {
     public static func appName() -> String {
         return NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleName") as! String
     }
+    
+//    public static func mangledSelector:(selector: Selector) -> Selector {
+//        
+//    }
 }

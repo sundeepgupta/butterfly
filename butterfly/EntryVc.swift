@@ -2,6 +2,12 @@ import UIKit
 
 public class EntryVc: UIViewController {
     @IBOutlet private(set) public weak var textView: UITextView!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    
+    public override func viewDidLoad() {
+        super.viewDidLoad()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "adjustTextViewHeight", name: UIKeyboardDidChangeFrameNotification, object: nil)
+    }
     
     public override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -19,5 +25,10 @@ public class EntryVc: UIViewController {
         }
         
         SendMail(email: Settings().email(), body: self.textView.text, success: success, failure: failure).perform()
+    }
+    
+    // MARK: Private
+    func adjustTextViewHeight() {
+        
     }
 }
