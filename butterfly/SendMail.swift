@@ -1,53 +1,66 @@
 import Foundation
 
 public struct SendMail {
+    let email: String
+    let body: String
+    let success: (() -> ())
+    let failure: (NSError -> ())
     
-    public func perform(body: String, success: (() -> ()), failure: (NSError -> ())) {
-        let session = NSURLSession.sharedSession()
-        
-        let url = NSURL(string: "https://mandrillapp.com/api/1.0/messages/send.json")!
-        var request = NSMutableURLRequest(URL: url)
-        request.HTTPMethod = "POST"
-        
-        let bodyHash = [
+    public init(email: String, body: String, success: (() -> ()), failure: (NSError -> ())) {
+        self.email = email
+        self.body = body
+        self.success = success
+        self.failure = failure
+    }
+    
+    public func perform() {
+        let payload = self.payload()
+        let request = self.request(payload)
+        self.dataTask(request).resume()
+    }
+    
+    // MARK: Private
+    private func payload() -> Dictionary<String, AnyObject> {
+        return [
             "key": "PyQXIJOBNNN4tpVAWYV5ow",
             "message": [
-                "html": "Example HTML content",
-                "text": "Example text content",
-                "subject": "example subject",
-                "from_email": "message.from_email@example.com",
-                "from_name": "Example Name",
-                "to": ["email": "sundeepkgupta@gmail.com"]
+                "text": self.body,
+                "subject": "Butterfly Daily Memory",
+                "from_email": "no-reply@butterfly.com",
+                "from_name": "Butterly",
+                "to": [["email": self.email]]
             ]
         ]
-        let bodyData = NSJSONSerialization.dataWithJSONObject(bodyHash, options: .PrettyPrinted, error: nil)
-        request.HTTPBody = bodyData
-        
-        let task = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) in
+    }
+    
+    private func request(payload: Dictionary<String, AnyObject>) -> NSURLRequest {
+        var request = NSMutableURLRequest(URL: NSURL(string: "https://mandrillapp.com/api/1.0/messages/send.json")!)
+        request.HTTPMethod = "POST"
+        request.HTTPBody = NSJSONSerialization.dataWithJSONObject(payload, options: .PrettyPrinted, error: nil)
+        return request.copy() as! NSURLRequest
+    }
+    
+    private func dataTask(request: NSURLRequest) -> NSURLSessionDataTask {
+        let handler = {(data: NSData!, response: NSURLResponse!, error: NSError!) in
             dispatch_async(dispatch_get_main_queue(), {
                 if error != nil {
-                    
-                    failure(error)
+                    self.failure(error)
                 } else {
                     let hash = self.convertDataToHash(data)
                     let status = hash["status"] as! String
                     
                     if status == "sent" {
-                        success()
+                        self.success()
                     } else {
-                        let appName = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleName") as! String
-                        let userInfo: [NSObject: AnyObject] = [Constants.errorHashKey : hash]
-                        
-                        let error = NSError(domain: appName, code: 1, userInfo: userInfo)
-                        failure(error)
+                        self.failure(self.error(hash))
                     }
                 }
             })
-        })
-        task.resume()
+        }
+        
+        return NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: handler)
     }
     
-    // MARK: Private
     private func convertDataToHash(data: NSData) -> Dictionary<String, AnyObject> {
         let responseObject: AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil)
         var responseHash = [String: AnyObject]()
@@ -62,6 +75,11 @@ public struct SendMail {
         println("Email request's response hash: \(responseHash)")
         
         return responseHash
+    }
+    
+    private func error(hash: Dictionary<String, AnyObject>) -> NSError {
+        let userInfo: [NSObject: AnyObject] = [Keys.errorHash : hash]
+        return NSError(domain: Utils.appName(), code: 42, userInfo: userInfo)
     }
 }
 

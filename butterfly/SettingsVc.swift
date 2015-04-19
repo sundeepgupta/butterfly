@@ -21,11 +21,7 @@ public class SettingsVc: UIViewController {
     
     // MARK: Private
     private func loadEmail() {
-        #if DEBUG
-            self.emailField.text = "sundeep@sundeepgupta.ca"
-        #else
-            self.emailField.text = self.settings.email()
-        #endif
+        self.emailField.text = self.settings.email()
     }
     
     private func dismiss() {

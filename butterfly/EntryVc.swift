@@ -9,11 +9,10 @@ public class EntryVc: UIViewController {
         }
         
         let failure = { (error: NSError) -> Void in
-            let message = "The email could not be sent.\n\n\(error.userInfo![Constants.errorHashKey])"
+            let message = "The email could not be sent.\n\n\(error.userInfo![Keys.errorHash])"
             Alert(title: "Darn it!", message: message, showIn: self).show()
         }
         
-        SendMail().perform(self.textView.text, success: success, failure: failure)
+        SendMail(email: Settings().email(), body: self.textView.text, success: success, failure: failure).perform()
     }
-        
 }

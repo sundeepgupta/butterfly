@@ -16,6 +16,7 @@
 		271503141AB3D1A500C99C42 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 271503131AB3D1A500C99C42 /* Images.xcassets */; };
 		271503171AB3D1A500C99C42 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 271503151AB3D1A500C99C42 /* LaunchScreen.xib */; };
 		271503231AB3D1A600C99C42 /* EntryVcSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271503221AB3D1A600C99C42 /* EntryVcSpec.swift */; };
+		271A7E181AE4527900AEC718 /* SendMailSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271A7E171AE4527900AEC718 /* SendMailSpec.swift */; };
 		271BFA6A1AB3E04100C151F9 /* EntryVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271BFA691AB3E04100C151F9 /* EntryVc.swift */; };
 		274BD766C2481AF61892DC6A /* Pods_butterflyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A49BB8426AAB58A3B5B9ACC /* Pods_butterflyTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		27576B4E1AE2B4AE00D15F32 /* SettingsVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27576B4D1AE2B4AE00D15F32 /* SettingsVc.swift */; };
@@ -48,6 +49,7 @@
 		2715031C1AB3D1A600C99C42 /* butterflyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = butterflyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		271503211AB3D1A600C99C42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		271503221AB3D1A600C99C42 /* EntryVcSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryVcSpec.swift; sourceTree = "<group>"; };
+		271A7E171AE4527900AEC718 /* SendMailSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendMailSpec.swift; sourceTree = "<group>"; };
 		271BFA691AB3E04100C151F9 /* EntryVc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryVc.swift; sourceTree = "<group>"; };
 		27576B4D1AE2B4AE00D15F32 /* SettingsVc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVc.swift; sourceTree = "<group>"; };
 		277C74921AE3DFFD007C2808 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
@@ -86,7 +88,7 @@
 				746089FB8D44BA88304A868D /* Frameworks */,
 				71784C3FD282F31555E790ED /* Pods */,
 				271503081AB3D1A500C99C42 /* Products */,
-				2715031F1AB3D1A600C99C42 /* Specs */,
+				2715031F1AB3D1A600C99C42 /* Tests */,
 				271503201AB3D1A600C99C42 /* Supporting Files */,
 			);
 			sourceTree = "<group>";
@@ -122,15 +124,16 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		2715031F1AB3D1A600C99C42 /* Specs */ = {
+		2715031F1AB3D1A600C99C42 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
 				271503221AB3D1A600C99C42 /* EntryVcSpec.swift */,
 				27E1F61F1AE2DF6C00FC6475 /* SettingsVcSpec.swift */,
 				271419891AE3079B00FEAD0A /* SettingsSpec.swift */,
 				277C74941AE3E031007C2808 /* AlertSpec.swift */,
+				271A7E171AE4527900AEC718 /* SendMailSpec.swift */,
 			);
-			name = Specs;
+			name = Tests;
 			path = butterflyTests;
 			sourceTree = "<group>";
 		};
@@ -364,6 +367,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				271A7E181AE4527900AEC718 /* SendMailSpec.swift in Sources */,
 				271419841AE2E19100FEAD0A /* SettingsVcSpec.swift in Sources */,
 				277C74951AE3E031007C2808 /* AlertSpec.swift in Sources */,
 				271503231AB3D1A600C99C42 /* EntryVcSpec.swift in Sources */,

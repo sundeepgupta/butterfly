@@ -17,7 +17,7 @@ class SettingsSpec: QuickSpec {
         it("saves the email setting") {
             let email = "bla@blabla.com"
             subject.saveEmail(email)
-            expect(defaults.stringForKey(Constants.emailKey)).to(equal(email))
+            expect(defaults.stringForKey(Keys.email)).to(equal(email))
         }
         
         it("provides the email setting after one has been saved") {

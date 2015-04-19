@@ -1,6 +1,9 @@
 public struct Constants {
     public static let storyboardName = "Main"
-    public static let emailKey = "emailKey"
-    public static let errorHashKey = "errorHashKey"
-    public static let errorMessageKey = "errrorMessageKey"
+}
+
+public struct Keys {
+    public static let email = "emailKey"
+    public static let errorHash = "errorHashKey"
+    public static let errorMessage = "errrorMessageKey"
 }

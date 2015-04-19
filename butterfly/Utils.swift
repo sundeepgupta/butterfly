@@ -6,4 +6,8 @@ public struct Utils {
         let components = nameWithModule.componentsSeparatedByString(".")
         return components.last!
     }
+    
+    public static func appName() -> String {
+        return NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleName") as! String
+    }
 }
