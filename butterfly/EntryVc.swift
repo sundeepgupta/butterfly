@@ -8,11 +8,11 @@ public class EntryVc: UIViewController {
             println("success")
         }
         
-        let error = {(errorMessage: String) in
-            println(errorMessage)
-        }
-        
-        SendMail().perform(self.textView.text, success: success, failure: error)
+//        let error = {(errorMessage: String) in
+//            println(errorMessage)
+//        }
+//        
+//        SendMail().perform(self.textView.text, success: success, failure: error)
     }
         
 }

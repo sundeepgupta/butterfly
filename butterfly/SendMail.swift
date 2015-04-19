@@ -2,7 +2,7 @@ import Foundation
 
 public struct SendMail {
     
-    public func perform(body: String, success: (() -> ()), failure: (String -> ())) {
+    public func perform(body: String, success: (() -> ()), failure: (NSError -> ())) {
         let session = NSURLSession.sharedSession()
         
         let url = NSURL(string: "https://mandrillapp.com/api/1.0/messages/send.json")!
@@ -26,7 +26,8 @@ public struct SendMail {
         let task = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) in
             dispatch_async(dispatch_get_main_queue(), {
                 if error != nil {
-                    failure("NSURLSession Error: " + error.localizedDescription)
+                    
+                    failure(error)
                 } else {
                     let hash = self.convertDataToHash(data)
                     let status = hash["status"] as! String
@@ -34,7 +35,14 @@ public struct SendMail {
                     if status == "sent" {
                         success()
                     } else {
-                        failure(hash["reject_reason"] as! String)
+                        let appName = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleName") as! String
+                        let userInfo: [NSObject: AnyObject] = [
+                            NSLocalizedDescriptionKey: "Whoops! There was an unkown error while trying to send the email.",
+                            Constants.errorHashKey : hash
+                        ]
+                        
+                        let error = NSError(domain: appName, code: 1, userInfo: userInfo)
+                        failure(error)
                     }
                 }
             })
@@ -54,7 +62,7 @@ public struct SendMail {
         } else {
             println("Unkown data type: " + data.description)
         }
-        println("Response hash: \(responseHash)")
+        println("Email request's response hash: \(responseHash)")
         
         return responseHash
     }
