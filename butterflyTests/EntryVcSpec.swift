@@ -1,6 +1,7 @@
 import Quick
 import Nimble
 import butterfly
+import UIKit
 
 class EntryVcSpec: QuickSpec {
     override func spec() {
@@ -33,7 +34,28 @@ class EntryVcSpec: QuickSpec {
                 subject.loadView()
                 expect(subject.textView).toNot(beNil())
             }
-
+        }
+        
+        context("When handling the keyboard") {
+            beforeEach {
+                let window = UIWindow(frame: UIScreen.mainScreen().bounds)
+                window.rootViewController = subject
+                window.makeKeyAndVisible()
+            }
+            
+            it("shows the keyboard when the view appears.") {
+                subject.viewWillAppear(false)
+                expect(subject.textView.isFirstResponder()).to(beTrue())
+            }
+            
+            it("shrinks the text view height.") {
+                subject.loadView()
+                let originalHeight = subject.textView.frame.size.height
+                
+                subject.viewWillAppear(false)
+                
+                expect(subject.textView.frame.size.height).to(beLessThan(originalHeight))
+            }
         }
     }
 }

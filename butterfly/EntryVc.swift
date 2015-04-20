@@ -6,7 +6,7 @@ public class EntryVc: UIViewController {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "adjustTextViewHeight", name: UIKeyboardDidChangeFrameNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "adjustTextViewHeight:", name: UIKeyboardDidChangeFrameNotification, object: nil)
     }
     
     public override func viewWillAppear(animated: Bool) {
@@ -27,8 +27,11 @@ public class EntryVc: UIViewController {
         SendMail(email: Settings().email(), body: self.textView.text, success: success, failure: failure).perform()
     }
     
-    // MARK: Private
-    func adjustTextViewHeight() {
-        
+    // MARK: UIKeyboardDidChangeFrameNotification
+    func adjustTextViewHeight(notification: NSNotification) {
+        let frameInfo = notification.userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue
+        let keyboardEndY = frameInfo.CGRectValue().origin.y
+        self.bottomConstraint.constant = self.view.frame.size.height - keyboardEndY
+        self.view.layoutIfNeeded()
     }
 }
