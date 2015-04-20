@@ -24,7 +24,7 @@ public class EntryVc: UIViewController {
             Alert(title: "Darn it!", message: message, showIn: self).show()
         }
         
-        SendMail(email: Settings().email(), body: self.textView.text, success: success, failure: failure).perform()
+        EmailMemory(email: Settings().email(), body: self.textView.text, success: success, failure: failure).perform()
     }
     
     // MARK: UIKeyboardDidChangeFrameNotification

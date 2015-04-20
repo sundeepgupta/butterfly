@@ -2,7 +2,7 @@ import Quick
 import Nimble
 import butterfly
 
-class EmailMemorySpec: QuickSpec {
+class StoreMemorySpec: QuickSpec {
     override func spec() {
         // These are bad. They actually call out to Mandril and probably are not thread safe.
         // Need to build fakes or wait until Quick/Nimble have better support for doubles.
@@ -20,7 +20,7 @@ class EmailMemorySpec: QuickSpec {
         // Marking pending due to these not working properly
         xit("Calls success block.") {
             let email = "well@formed_email.com"
-
+            
             EmailMemory(email: email, body: "body", success: success, failure: failure).perform()
             
             expect(successCalled).toEventually(beTrue(), timeout: 3)

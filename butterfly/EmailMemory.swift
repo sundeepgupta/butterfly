@@ -1,6 +1,6 @@
 import Foundation
 
-public struct SendMail {
+public struct EmailMemory {
     let email: String
     let body: String
     let success: (() -> ())

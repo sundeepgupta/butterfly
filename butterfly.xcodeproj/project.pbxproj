@@ -22,7 +22,9 @@
 		27576B4E1AE2B4AE00D15F32 /* SettingsVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27576B4D1AE2B4AE00D15F32 /* SettingsVc.swift */; };
 		277C74931AE3DFFD007C2808 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277C74921AE3DFFD007C2808 /* Alert.swift */; };
 		277C74951AE3E031007C2808 /* AlertSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277C74941AE3E031007C2808 /* AlertSpec.swift */; };
-		277DC7241AB7CBC6006AABD9 /* SendMail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277DC7231AB7CBC6006AABD9 /* SendMail.swift */; };
+		277DC7241AB7CBC6006AABD9 /* EmailMemory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277DC7231AB7CBC6006AABD9 /* EmailMemory.swift */; };
+		278777891AE5B59E00E1A9F9 /* StoreMemory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278777881AE5B59E00E1A9F9 /* StoreMemory.swift */; };
+		2787778B1AE5B65A00E1A9F9 /* StoreMemory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2787778A1AE5B65A00E1A9F9 /* StoreMemory.swift */; };
 		27E1F6221AE2E01900FC6475 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E1F6211AE2E01900FC6475 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,12 +51,14 @@
 		2715031C1AB3D1A600C99C42 /* butterflyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = butterflyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		271503211AB3D1A600C99C42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		271503221AB3D1A600C99C42 /* EntryVcSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryVcSpec.swift; sourceTree = "<group>"; };
-		271A7E171AE4527900AEC718 /* SendMailSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendMailSpec.swift; sourceTree = "<group>"; };
-		271BFA691AB3E04100C151F9 /* EntryVc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryVc.swift; sourceTree = "<group>"; };
+		271A7E171AE4527900AEC718 /* SendMailSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = SendMailSpec.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		271BFA691AB3E04100C151F9 /* EntryVc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = EntryVc.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		27576B4D1AE2B4AE00D15F32 /* SettingsVc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVc.swift; sourceTree = "<group>"; };
 		277C74921AE3DFFD007C2808 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		277C74941AE3E031007C2808 /* AlertSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertSpec.swift; sourceTree = "<group>"; };
-		277DC7231AB7CBC6006AABD9 /* SendMail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendMail.swift; sourceTree = "<group>"; };
+		277DC7231AB7CBC6006AABD9 /* EmailMemory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = EmailMemory.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		278777881AE5B59E00E1A9F9 /* StoreMemory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = StoreMemory.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		2787778A1AE5B65A00E1A9F9 /* StoreMemory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreMemory.swift; sourceTree = "<group>"; };
 		27E1F61F1AE2DF6C00FC6475 /* SettingsVcSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVcSpec.swift; sourceTree = "<group>"; };
 		27E1F6211AE2E01900FC6475 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2A49BB8426AAB58A3B5B9ACC /* Pods_butterflyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_butterflyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +136,7 @@
 				271419891AE3079B00FEAD0A /* SettingsSpec.swift */,
 				277C74941AE3E031007C2808 /* AlertSpec.swift */,
 				271A7E171AE4527900AEC718 /* SendMailSpec.swift */,
+				278777881AE5B59E00E1A9F9 /* StoreMemory.swift */,
 			);
 			name = Tests;
 			path = butterflyTests;
@@ -178,8 +183,9 @@
 			isa = PBXGroup;
 			children = (
 				271419871AE3072000FEAD0A /* Settings.swift */,
-				277DC7231AB7CBC6006AABD9 /* SendMail.swift */,
+				277DC7231AB7CBC6006AABD9 /* EmailMemory.swift */,
 				277C74921AE3DFFD007C2808 /* Alert.swift */,
+				2787778A1AE5B65A00E1A9F9 /* StoreMemory.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -355,9 +361,10 @@
 				27E1F6221AE2E01900FC6475 /* Constants.swift in Sources */,
 				2715030D1AB3D1A500C99C42 /* AppDelegate.swift in Sources */,
 				27576B4E1AE2B4AE00D15F32 /* SettingsVc.swift in Sources */,
+				2787778B1AE5B65A00E1A9F9 /* StoreMemory.swift in Sources */,
 				271BFA6A1AB3E04100C151F9 /* EntryVc.swift in Sources */,
 				271419881AE3072000FEAD0A /* Settings.swift in Sources */,
-				277DC7241AB7CBC6006AABD9 /* SendMail.swift in Sources */,
+				277DC7241AB7CBC6006AABD9 /* EmailMemory.swift in Sources */,
 				277C74931AE3DFFD007C2808 /* Alert.swift in Sources */,
 				271419861AE2E68600FEAD0A /* Utils.swift in Sources */,
 			);
@@ -367,6 +374,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				278777891AE5B59E00E1A9F9 /* StoreMemory.swift in Sources */,
 				271A7E181AE4527900AEC718 /* SendMailSpec.swift in Sources */,
 				271419841AE2E19100FEAD0A /* SettingsVcSpec.swift in Sources */,
 				277C74951AE3E031007C2808 /* AlertSpec.swift in Sources */,
