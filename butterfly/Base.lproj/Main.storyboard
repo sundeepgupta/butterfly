@@ -60,6 +60,7 @@
                     <connections>
                         <outlet property="bottomConstraint" destination="e2A-Tv-yeS" id="hee-QJ-mj6"/>
                         <outlet property="textView" destination="O04-NJ-QiP" id="F3r-Cf-6PT"/>
+                        <segue destination="JmM-wh-d3O" kind="show" id="4uk-47-h40"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -124,7 +125,48 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wGh-wx-8vU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1888" y="-106"/>
+            <point key="canvasLocation" x="1955" y="-109"/>
+        </scene>
+        <!--Previous Memory-->
+        <scene sceneID="eIx-5b-Kn6">
+            <objects>
+                <viewController title="Previous Memory" id="JmM-wh-d3O" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="C6w-Qc-bOo"/>
+                        <viewControllerLayoutGuide type="bottom" id="1YO-Kr-b3L"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="37W-4k-QfC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lLf-a2-XXg">
+                                <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                                <color key="backgroundColor" red="0.83110827728762238" green="0.91222895410000004" blue="0.90841215949949317" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="136" id="fhi-6e-Xf6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="fhi-6e-Xf6"/>
+                                    </mask>
+                                </variation>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1YO-Kr-b3L" firstAttribute="top" secondItem="lLf-a2-XXg" secondAttribute="bottom" id="3am-Lg-Baw"/>
+                            <constraint firstItem="lLf-a2-XXg" firstAttribute="leading" secondItem="37W-4k-QfC" secondAttribute="leading" id="BQ3-Qe-Oij"/>
+                            <constraint firstItem="lLf-a2-XXg" firstAttribute="top" secondItem="C6w-Qc-bOo" secondAttribute="bottom" id="fKY-Yv-wrj"/>
+                            <constraint firstAttribute="trailing" secondItem="lLf-a2-XXg" secondAttribute="trailing" id="kRU-sk-NIa"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SS7-aO-sNW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1576" y="431"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="YDc-pd-rG2">
@@ -162,7 +204,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pvv-KU-EPd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1509" y="-106"/>
+            <point key="canvasLocation" x="1576" y="-109"/>
         </scene>
     </scenes>
 </document>
