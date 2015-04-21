@@ -7,6 +7,12 @@ public struct Utils {
         return components.last!
     }
     
+    public static func stringForTypeOfThing(thing: Any) -> String {
+        let type = _stdlib_getDemangledTypeName(thing)
+        let components = type.componentsSeparatedByString(".")
+        return components.last!
+    }
+    
     public static func appName() -> String {
         return NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleName") as! String
     }

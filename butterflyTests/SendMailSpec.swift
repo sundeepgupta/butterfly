@@ -18,22 +18,22 @@ class EmailMemorySpec: QuickSpec {
         }
         
         // Marking pending due to these not working properly
-        xit("Calls success block.") {
-            let email = "well@formed_email.com"
-
-            EmailMemory(email: email, body: "body", success: success, failure: failure).perform()
-            
-            expect(successCalled).toEventually(beTrue(), timeout: 3)
-            expect(failureCalled).toEventually(beFalse(), timeout: 3)
-        }
-        
-        xit("Calls failure block.") {
-            let email = "malformed_email"
-            
-            EmailMemory(email: email, body: "body", success: success, failure: failure).perform()
-            
-            expect(successCalled).toEventually(beFalse(), timeout: 3)
-            expect(failureCalled).toEventually(beTrue(), timeout: 3)
-        }
+//        xit("Calls success block.") {
+//            let email = "well@formed_email.com"
+//
+//            EmailMemory(email: email, body: "body", success: success, failure: failure).perform()
+//            
+//            expect(successCalled).toEventually(beTrue(), timeout: 3)
+//            expect(failureCalled).toEventually(beFalse(), timeout: 3)
+//        }
+//        
+//        xit("Calls failure block.") {
+//            let email = "malformed_email"
+//            
+//            EmailMemory(email: email, body: "body", success: success, failure: failure).perform()
+//            
+//            expect(successCalled).toEventually(beFalse(), timeout: 3)
+//            expect(failureCalled).toEventually(beTrue(), timeout: 3)
+//        }
     }
 }

@@ -1,14 +1,14 @@
 import Foundation
 
 public struct EmailMemory {
+    let memory: Memory
     let email: String
-    let body: String
     let success: (() -> ())
     let failure: (NSError -> ())
     
-    public init(email: String, body: String, success: (() -> ()), failure: (NSError -> ())) {
-        self.email = email
-        self.body = body
+    public init(memory: Memory, success: (() -> ()), failure: (NSError -> ())) {
+        self.memory = memory
+        self.email = Settings().email()
         self.success = success
         self.failure = failure
     }
@@ -24,7 +24,7 @@ public struct EmailMemory {
         return [
             "key": "PyQXIJOBNNN4tpVAWYV5ow",
             "message": [
-                "text": self.body,
+                "text": self.memory.thoughts,
                 "subject": "Butterfly Daily Memory",
                 "from_email": "no-reply@butterfly.com",
                 "from_name": "Butterly",
@@ -45,14 +45,18 @@ public struct EmailMemory {
             dispatch_async(dispatch_get_main_queue(), {
                 if error != nil {
                     self.failure(error)
+                    println("Network error emailing memory: \(self.memory)\nError: \(error)")
                 } else {
                     let hash = self.convertDataToHash(data)
                     let status = hash["status"] as! String
                     
                     if status == "sent" {
                         self.success()
+                        println("Memory emailed successfully: \(self.memory)")
                     } else {
-                        self.failure(self.error(hash))
+                        let error = self.error(hash: hash)
+                        self.failure(error)
+                        println("Error emailing memory: \(self.memory)\nError: \(error)")
                     }
                 }
             })
@@ -72,12 +76,11 @@ public struct EmailMemory {
         } else {
             println("Unkown data type: " + data.description)
         }
-        println("Email request's response hash: \(responseHash)")
         
         return responseHash
     }
     
-    private func error(hash: Dictionary<String, AnyObject>) -> NSError {
+    private func error(#hash: Dictionary<String, AnyObject>) -> NSError {
         let userInfo: [NSObject: AnyObject] = [Keys.errorHash : hash]
         return NSError(domain: Utils.appName(), code: 42, userInfo: userInfo)
     }

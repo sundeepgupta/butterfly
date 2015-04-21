@@ -1,13 +1,15 @@
 import UIKit
 
-
 public class EntryVc: UIViewController {
     @IBOutlet private(set) public weak var textView: UITextView!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
     public override func viewDidLoad() {
         super.viewDidLoad()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "adjustTextViewHeight:", name: UIKeyboardDidChangeFrameNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self,
+            selector: "adjustTextViewHeight:",
+            name: UIKeyboardDidChangeFrameNotification,
+            object: nil)
     }
     
     public override func viewWillAppear(animated: Bool) {
@@ -16,25 +18,18 @@ public class EntryVc: UIViewController {
     }
     
     @IBAction func submit() {
-//        var memory = PFOBject(className: "Memory")
+        let success = {
+            Alert(title: "Success!",
+                message: "Your memory was saved :)",
+                showIn: self).show()
+        }
         
+        let failure = { (error: NSError) -> Void in
+            let message = "There was an error saving your memory :(\n\n\(error.userInfo![Keys.errorHash])"
+            Alert(title: "Darn it!", message: message, showIn: self).show()
+        }
         
-        
-        
-        
-        
-        
-        
-//        let success = {
-//            Alert(title: "Success!", message: "Your memory was emailed to you :)", showIn: self).show()
-//        }
-//        
-//        let failure = { (error: NSError) -> Void in
-//            let message = "The email could not be sent.\n\n\(error.userInfo![Keys.errorHash])"
-//            Alert(title: "Darn it!", message: message, showIn: self).show()
-//        }
-//        
-//        EmailMemory(email: Settings().email(), body: self.textView.text, success: success, failure: failure).perform()
+        SubmitMemory.perform(thoughts: self.textView.text, success: success, failure: failure)
     }
     
     func adjustTextViewHeight(notification: NSNotification) {
