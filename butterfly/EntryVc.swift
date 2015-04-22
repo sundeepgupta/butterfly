@@ -19,9 +19,7 @@ public class EntryVc: UIViewController {
     
     @IBAction func submit() {
         let success = {
-            Alert(title: "Success!",
-                message: "Your memory was saved :)",
-                showIn: self).show()
+            self.performSegueWithIdentifier("toOldMemory", sender: nil)
         }
         
         let failure = { (error: NSError) -> Void in

@@ -60,7 +60,7 @@
                     <connections>
                         <outlet property="bottomConstraint" destination="e2A-Tv-yeS" id="hee-QJ-mj6"/>
                         <outlet property="textView" destination="O04-NJ-QiP" id="F3r-Cf-6PT"/>
-                        <segue destination="JmM-wh-d3O" kind="show" id="4uk-47-h40"/>
+                        <segue destination="JmM-wh-d3O" kind="show" identifier="toOldMemory" id="4uk-47-h40"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
