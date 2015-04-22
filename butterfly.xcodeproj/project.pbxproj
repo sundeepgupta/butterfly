@@ -28,6 +28,7 @@
 		27C37B661AE5DA4500BA5328 /* Memory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C37B651AE5DA4500BA5328 /* Memory.swift */; };
 		27C37B681AE5E01D00BA5328 /* MemorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C37B671AE5E01D00BA5328 /* MemorySpec.swift */; };
 		27C37B6A1AE5EC8E00BA5328 /* SubmitMemory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C37B691AE5EC8E00BA5328 /* SubmitMemory.swift */; };
+		27E0BF361AE72F4F001E0B35 /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 27E0BF351AE72F4F001E0B35 /* Secrets.plist */; };
 		27E1F6221AE2E01900FC6475 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E1F6211AE2E01900FC6475 /* Constants.swift */; };
 		BDD0ECCDBB089DE57736089E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77D73D9C3B2BCFF559CDE2BC /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
@@ -67,6 +68,7 @@
 		27C37B651AE5DA4500BA5328 /* Memory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Memory.swift; sourceTree = "<group>"; };
 		27C37B671AE5E01D00BA5328 /* MemorySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemorySpec.swift; sourceTree = "<group>"; };
 		27C37B691AE5EC8E00BA5328 /* SubmitMemory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitMemory.swift; sourceTree = "<group>"; };
+		27E0BF351AE72F4F001E0B35 /* Secrets.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = SOURCE_ROOT; };
 		27E1F61F1AE2DF6C00FC6475 /* SettingsVcSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVcSpec.swift; sourceTree = "<group>"; };
 		27E1F6211AE2E01900FC6475 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2A49BB8426AAB58A3B5B9ACC /* Pods_butterflyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_butterflyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,6 +140,7 @@
 		2715030A1AB3D1A500C99C42 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				27E0BF351AE72F4F001E0B35 /* Secrets.plist */,
 				2715030B1AB3D1A500C99C42 /* Info.plist */,
 				27C37B631AE5D6F200BA5328 /* butterfly-Bridging-Header.h */,
 			);
@@ -324,6 +327,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27E0BF361AE72F4F001E0B35 /* Secrets.plist in Resources */,
 				271503121AB3D1A500C99C42 /* Main.storyboard in Resources */,
 				271503171AB3D1A500C99C42 /* LaunchScreen.xib in Resources */,
 				271503141AB3D1A500C99C42 /* Images.xcassets in Resources */,
