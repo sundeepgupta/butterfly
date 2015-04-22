@@ -22,7 +22,7 @@ public struct EmailMemory {
     // MARK: Private
     private func payload() -> Dictionary<String, AnyObject> {
         return [
-            "key": "PyQXIJOBNNN4tpVAWYV5ow",
+            "key": Utils.secretForKey("mandrillApiKey"),
             "message": [
                 "text": self.memory.thoughts,
                 "subject": "Butterfly Daily Memory",
