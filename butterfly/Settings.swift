@@ -1,28 +1,26 @@
 import Foundation
 
 public struct Settings {
+    let defaults: NSUserDefaults
     
-    public init() {}
+    public init(defaults: NSUserDefaults) {
+        self.defaults = defaults
+    }
     
     public func saveEmail(email: String) {
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setValue(email, forKey: Keys.email)
-        defaults.synchronize()
+        self.defaults.setValue(email, forKey: Keys.email)
+        self.defaults.synchronize()
     }
     
     public func email() -> String {
-        let defaults = NSUserDefaults.standardUserDefaults()
-        let email = defaults.stringForKey(Keys.email)
-        
         #if DEBUG
             return "sundeep@sundeepgupta.ca"
         #else
-            if email != nil {
-                return email!
+            if let email = self.defaults.stringForKey(Keys.email) {
+                return email
             } else {
                 return ""
             }
         #endif
-
     }
 }

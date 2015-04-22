@@ -6,9 +6,9 @@ public struct EmailMemory {
     let success: (() -> ())
     let failure: (NSError -> ())
     
-    public init(memory: Memory, success: (() -> ()), failure: (NSError -> ())) {
+    public init(memory: Memory, email: String, success: (() -> ()), failure: (NSError -> ())) {
         self.memory = memory
-        self.email = Settings().email()
+        self.email = email
         self.success = success
         self.failure = failure
     }

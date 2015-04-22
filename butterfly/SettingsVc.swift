@@ -2,7 +2,7 @@ import UIKit
 
 public class SettingsVc: UIViewController {
     @IBOutlet private(set) public weak var emailField: UITextField!
-    let settings = Settings()
+    let settings = Settings(defaults: NSUserDefaults.standardUserDefaults())
     
     public override func viewDidLoad() {
         super.viewDidLoad()
