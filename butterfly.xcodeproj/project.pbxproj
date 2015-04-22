@@ -24,7 +24,9 @@
 		277C74951AE3E031007C2808 /* AlertSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277C74941AE3E031007C2808 /* AlertSpec.swift */; };
 		277DC7241AB7CBC6006AABD9 /* EmailMemory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277DC7231AB7CBC6006AABD9 /* EmailMemory.swift */; };
 		278777891AE5B59E00E1A9F9 /* StoreMemorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278777881AE5B59E00E1A9F9 /* StoreMemorySpec.swift */; };
-		2787778B1AE5B65A00E1A9F9 /* StoreMemory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2787778A1AE5B65A00E1A9F9 /* StoreMemory.swift */; };
+		2787778B1AE5B65A00E1A9F9 /* SaveMemory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2787778A1AE5B65A00E1A9F9 /* SaveMemory.swift */; };
+		27BA831C1AE744BC00A691B2 /* ParseMemory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BA831B1AE744BC00A691B2 /* ParseMemory.swift */; };
+		27BA831E1AE74CE000A691B2 /* Saveable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BA831D1AE74CE000A691B2 /* Saveable.swift */; };
 		27C37B661AE5DA4500BA5328 /* Memory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C37B651AE5DA4500BA5328 /* Memory.swift */; };
 		27C37B681AE5E01D00BA5328 /* MemorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C37B671AE5E01D00BA5328 /* MemorySpec.swift */; };
 		27C37B6A1AE5EC8E00BA5328 /* SubmitMemory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C37B691AE5EC8E00BA5328 /* SubmitMemory.swift */; };
@@ -63,7 +65,9 @@
 		277C74941AE3E031007C2808 /* AlertSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertSpec.swift; sourceTree = "<group>"; };
 		277DC7231AB7CBC6006AABD9 /* EmailMemory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = EmailMemory.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		278777881AE5B59E00E1A9F9 /* StoreMemorySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = StoreMemorySpec.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		2787778A1AE5B65A00E1A9F9 /* StoreMemory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreMemory.swift; sourceTree = "<group>"; };
+		2787778A1AE5B65A00E1A9F9 /* SaveMemory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveMemory.swift; sourceTree = "<group>"; };
+		27BA831B1AE744BC00A691B2 /* ParseMemory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseMemory.swift; sourceTree = "<group>"; };
+		27BA831D1AE74CE000A691B2 /* Saveable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Saveable.swift; sourceTree = "<group>"; };
 		27C37B631AE5D6F200BA5328 /* butterfly-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "butterfly-Bridging-Header.h"; sourceTree = "<group>"; };
 		27C37B651AE5DA4500BA5328 /* Memory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Memory.swift; sourceTree = "<group>"; };
 		27C37B671AE5E01D00BA5328 /* MemorySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemorySpec.swift; sourceTree = "<group>"; };
@@ -193,6 +197,8 @@
 			isa = PBXGroup;
 			children = (
 				27C37B651AE5DA4500BA5328 /* Memory.swift */,
+				27BA831B1AE744BC00A691B2 /* ParseMemory.swift */,
+				27BA831D1AE74CE000A691B2 /* Saveable.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -213,7 +219,7 @@
 				271419871AE3072000FEAD0A /* Settings.swift */,
 				277DC7231AB7CBC6006AABD9 /* EmailMemory.swift */,
 				277C74921AE3DFFD007C2808 /* Alert.swift */,
-				2787778A1AE5B65A00E1A9F9 /* StoreMemory.swift */,
+				2787778A1AE5B65A00E1A9F9 /* SaveMemory.swift */,
 				27C37B691AE5EC8E00BA5328 /* SubmitMemory.swift */,
 			);
 			name = Services;
@@ -444,9 +450,11 @@
 				27E1F6221AE2E01900FC6475 /* Constants.swift in Sources */,
 				2715030D1AB3D1A500C99C42 /* AppDelegate.swift in Sources */,
 				27576B4E1AE2B4AE00D15F32 /* SettingsVc.swift in Sources */,
-				2787778B1AE5B65A00E1A9F9 /* StoreMemory.swift in Sources */,
+				27BA831E1AE74CE000A691B2 /* Saveable.swift in Sources */,
+				2787778B1AE5B65A00E1A9F9 /* SaveMemory.swift in Sources */,
 				271BFA6A1AB3E04100C151F9 /* EntryVc.swift in Sources */,
 				271419881AE3072000FEAD0A /* Settings.swift in Sources */,
+				27BA831C1AE744BC00A691B2 /* ParseMemory.swift in Sources */,
 				27C37B6A1AE5EC8E00BA5328 /* SubmitMemory.swift in Sources */,
 				277DC7241AB7CBC6006AABD9 /* EmailMemory.swift in Sources */,
 				277C74931AE3DFFD007C2808 /* Alert.swift in Sources */,
