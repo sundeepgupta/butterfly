@@ -11,6 +11,7 @@ public class SettingsVc: UIViewController {
     }
     
     @IBAction func save() {
+        self.trimWhitespace()
         self.settings.saveEmail(self.emailField.text)
         self.dismiss()
     }
@@ -26,6 +27,11 @@ public class SettingsVc: UIViewController {
     
     private func dismiss() {
         self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    private func trimWhitespace() {
+        let spaces = NSCharacterSet.whitespaceCharacterSet()
+        self.emailField.text = self.emailField.text.stringByTrimmingCharactersInSet(spaces)
     }
     
 }
