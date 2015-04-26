@@ -3,6 +3,8 @@ import UIKit
 public class EntryVc: UIViewController {
     @IBOutlet private(set) public weak var textView: UITextView!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var submitMemory: SubmitMemory!
+    
     
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,12 +25,15 @@ public class EntryVc: UIViewController {
         }
         
         let failure = { (error: NSError) -> Void in
-            let message = "There was an error saving your memory :(\n\n\(error.userInfo![Keys.errorHash])"
+            let message = "There was an error saving your memory :(\n\n" +
+                "\(error.userInfo![Keys.errorHash])"
             Alert(title: "Darn it!", message: message, showIn: self).show()
         }
         
-        SubmitMemory.perform(thoughts: self.textView.text, success: success, failure: failure)
+        self.submitMemory.perform(thoughts: self.textView.text, success: success, failure: failure)
     }
+    
+    
     
     func adjustTextViewHeight(notification: NSNotification) {
         let frameInfo = notification.userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue

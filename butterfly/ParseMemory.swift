@@ -13,7 +13,7 @@ public struct ParseMemory: Saveable {
         self.parseObject = PFObject(className: className, dictionary: dictionary)
     }
     
-    public func save(#success: Success, failure: Failure) {
+    public func save(#success: () -> Void, failure: NSError -> Void) {
         var error: NSError?
         self.parseObject.save(&error)
         

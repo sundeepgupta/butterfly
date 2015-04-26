@@ -1,4 +1,9 @@
+import Foundation
+
 public protocol Saveable {
-    func save(#success: Success, failure: Failure)
+    let memory: Memory
+    
+    init(memory: Memory)
+    func save(#success: () -> Void, failure: NSError -> Void)
 }
 

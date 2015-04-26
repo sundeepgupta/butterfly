@@ -1,6 +1,6 @@
 import Foundation
 
-public struct Memory {
+public class Memory : NSObject {
     let thoughts: String
     
     public init(thoughts: String) {

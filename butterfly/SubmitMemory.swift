@@ -1,12 +1,22 @@
 import Foundation
 
-public struct SubmitMemory {
-    public static func perform(#thoughts: String, success: (() -> ()), failure: (NSError -> ())) {
-        let memory = Memory(thoughts: thoughts)
-        let email = Settings(defaults: NSUserDefaults.standardUserDefaults()).email()
-        EmailMemory(memory: memory, email: email, success: success, failure: failure).perform()
+public class SubmitMemory : NSObject {
+    let memory: Memory
+    let success: () -> Void
+    let failure: NSError -> Void
+    
+    public init(factory: SaveableFactory,
+        memory: Memory,
+        success: () -> Void,
+        failure: NSError -> ()) {
+        
+            self.memory = memory
+    //        self.email = email
+            self.success = success
+            self.failure = failure
+    }
+    
+    public func perform(#thoughts: String, success: () -> Void, failure: (NSError) -> Void) {
 
-        let parseMemory = ParseMemory(memory: memory)
-        SaveMemory(memory: parseMemory, success: success, failure: failure).perform()
     }
 }

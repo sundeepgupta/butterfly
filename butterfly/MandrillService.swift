@@ -1,30 +1,27 @@
 import Foundation
 
-public struct EmailMemory {
-    let memory: Memory
+public class MandrillService {
     let email: String
-    let success: (() -> ())
-    let failure: (NSError -> ())
+    let body: String
     
-    public init(memory: Memory, email: String, success: (() -> ()), failure: (NSError -> ())) {
-        self.memory = memory
+    public init(email: String, body: String) {
         self.email = email
-        self.success = success
-        self.failure = failure
+        self.body = body
     }
     
-    public func perform() {
+    public func perform(#success: () -> Void, failure: NSError -> Void) {
         let payload = self.payload()
         let request = self.request(payload)
-        self.dataTask(request).resume()
+        self.dataTask(request: request, success: success, failure: failure).resume()
     }
+    
     
     // MARK: Private
     private func payload() -> Dictionary<String, AnyObject> {
         return [
             "key": Utils.secretForKey("mandrillApiKey"),
             "message": [
-                "text": self.memory.thoughts,
+                "text": self.body,
                 "subject": "Butterfly Daily Memory",
                 "from_email": "no-reply@butterfly.com",
                 "from_name": "Butterly",
@@ -40,27 +37,30 @@ public struct EmailMemory {
         return request.copy() as! NSURLRequest
     }
     
-    private func dataTask(request: NSURLRequest) -> NSURLSessionDataTask {
-        let handler = {(data: NSData!, response: NSURLResponse!, error: NSError!) in
-            dispatch_async(dispatch_get_main_queue(), {
-                if error != nil {
-                    self.failure(error)
-                    println("Network error emailing memory: \(self.memory)\nError: \(error)")
-                } else {
-                    let hash = self.convertDataToHash(data)
-                    let status = hash["status"] as! String
-                    
-                    if status == "sent" {
-                        self.success()
-                        println("Memory emailed successfully: \(self.memory)")
+    private func dataTask(#request: NSURLRequest,
+        success: () -> Void,
+        failure: NSError -> Void) -> NSURLSessionDataTask {
+            
+            let handler = {(data: NSData!, response: NSURLResponse!, error: NSError!) in
+                dispatch_async(dispatch_get_main_queue(), {
+                    if error != nil {
+                        failure(error)
+                        println("Network error saving to Mandrill: \(self.email)\nError: \(error)")
                     } else {
-                        let error = self.error(hash: hash)
-                        self.failure(error)
-                        println("Error emailing memory: \(self.memory)\nError: \(error)")
+                        let hash = self.convertDataToHash(data)
+                        let status = hash["status"] as! String
+                        
+                        if status == "sent" {
+                            success()
+                            println("Memory emailed successfully: \(self.email)")
+                        } else {
+                            let error = self.error(hash: hash)
+                            failure(error)
+                            println("Error emailing memory: \(self.email)\nError: \(error)")
+                        }
                     }
-                }
-            })
-        }
+                })
+            }
         
         return NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: handler)
     }

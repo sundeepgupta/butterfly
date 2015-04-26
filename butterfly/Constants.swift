@@ -1,7 +1,7 @@
 import Foundation
 
-public typealias Success = () -> ()
-public typealias Failure = (NSError) -> ()
+public typealias Success = Void -> Void
+public typealias Failure = NSError -> Void
 
 public struct Constants {
     public static let storyboardName = "Main"
