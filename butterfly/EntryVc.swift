@@ -23,7 +23,8 @@ public class EntryVc: UIViewController {
         }
         
         let failure = { (error: NSError) -> Void in
-            let message = "There was an error saving your memory :(\n\n\(error.userInfo![Keys.errorHash])"
+            let message = "There was an error saving your memory :(\n\n" +
+                "\(error.userInfo![Keys.errorHash])"
             Alert(title: "Darn it!", message: message, showIn: self).show()
         }
         

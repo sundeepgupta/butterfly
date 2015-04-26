@@ -33,5 +33,4 @@ public class SettingsVc: UIViewController {
         let spaces = NSCharacterSet.whitespaceCharacterSet()
         self.emailField.text = self.emailField.text.stringByTrimmingCharactersInSet(spaces)
     }
-    
 }

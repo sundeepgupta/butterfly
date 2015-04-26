@@ -36,14 +36,30 @@ class SettingsVcSpec: QuickSpec {
         }
         
         context("Email") {
+            func load(viewController: UIViewController) {
+                viewController.loadView()
+                viewController.viewDidLoad()
+            }
+            
             it("Renders the currently configured email") {
                 let email = "some@email.com"
                 Settings().saveEmail(email)
                 
-                subject.loadView()
-                subject.viewDidLoad()
+                load(subject)
                 
                 expect(subject.emailField.text).to(equal(email))
+            }
+            
+            it("Trims whitespace") {
+                load(subject)
+                subject.emailField.text = "  white@space.com     "
+                let button = subject.navigationItem.rightBarButtonItem
+                let selector = button?.action
+                
+                let app = UIApplication.sharedApplication()
+                app.sendAction(selector!, to: subject, from: nil, forEvent: nil)
+                
+                expect(subject.emailField.text).to(equal("white@space.com"))
             }
         }
     }
