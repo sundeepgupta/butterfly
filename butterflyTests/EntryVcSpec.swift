@@ -9,7 +9,8 @@ class EntryVcSpec: QuickSpec {
         
         beforeEach {
             let storyboard = UIStoryboard(name: Constants.storyboardName, bundle: nil)
-            let navigationController = storyboard.instantiateInitialViewController() as! UINavigationController
+            let navigationController = storyboard.instantiateInitialViewController()
+                as! UINavigationController
             subject = navigationController.viewControllers[0] as! EntryVc
         }
         
@@ -50,11 +51,13 @@ class EntryVcSpec: QuickSpec {
             
             it("shrinks the text view height.") {
                 subject.loadView()
+                subject.viewDidLoad()
                 let originalHeight = subject.textView.frame.size.height
                 
                 subject.viewWillAppear(false)
                 
-                expect(subject.textView.frame.size.height).to(beLessThan(originalHeight))
+                expect(subject.textView.frame.size.height)
+                    .toEventually(beLessThan(originalHeight))
             }
         }
     }
