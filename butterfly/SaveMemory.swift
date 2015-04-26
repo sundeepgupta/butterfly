@@ -1,7 +1,7 @@
 import Foundation
 import Parse
 
-public struct StoreMemory {
+public struct SaveMemory {
     private let memory: Memory
     let success: () -> Void
     let failure: NSError -> Void
