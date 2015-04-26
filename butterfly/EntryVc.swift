@@ -28,7 +28,7 @@ public class EntryVc: UIViewController {
             Alert(title: "Darn it!", message: message, showIn: self).show()
         }
         
-        SubmitMemory.perform(thoughts: self.textView.text, success: success, failure: failure)
+        StoreMemory(thoughts: self.textView.text, success: success, failure: failure).perform()
     }
     
     func adjustTextViewHeight(notification: NSNotification) {

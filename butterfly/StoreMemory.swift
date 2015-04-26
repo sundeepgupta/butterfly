@@ -3,11 +3,11 @@ import Parse
 
 public struct StoreMemory {
     private let memory: Memory
-    let success: (() -> ())
-    let failure: (NSError -> ())
+    let success: () -> Void
+    let failure: NSError -> Void
     
-    public init(memory: Memory, success: (() -> ()), failure: (NSError -> ())) {
-        self.memory = memory
+    public init(thoughts: String, success: () -> Void, failure: NSError -> Void) {
+        self.memory = Memory(thoughts: thoughts)
         self.success = success
         self.failure = failure
     }

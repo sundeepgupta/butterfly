@@ -5,7 +5,9 @@ public struct Alert {
     let viewController: UIViewController
 
     public init(title: String, message: String, showIn viewController: UIViewController) {
-        self.alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        self.alertController = UIAlertController(title: title,
+            message: message,
+            preferredStyle: .Alert)
         let action = UIAlertAction(title: "OK", style: .Default, handler: nil)
         self.alertController.addAction(action)
         
@@ -13,6 +15,7 @@ public struct Alert {
     }
     
     public func show() {
-        self.viewController.presentViewController(self.alertController, animated: true, completion: nil)
+        self.viewController
+            .presentViewController(self.alertController, animated: true, completion: nil)
     }
 }
