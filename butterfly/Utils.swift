@@ -22,4 +22,9 @@ public struct Utils {
         let secrets = NSDictionary(contentsOfFile: path) as! Dictionary<String, String>
         return secrets[key]!
     }
+    
+    public static func trimWhitespaceFromText(text: String) -> String {
+        let spaces = NSCharacterSet.whitespaceCharacterSet()
+        return text.stringByTrimmingCharactersInSet(spaces)
+    }
 }
