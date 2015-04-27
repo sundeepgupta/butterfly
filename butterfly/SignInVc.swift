@@ -34,11 +34,32 @@ public class SignInVc : UIViewController {
             Alert(title: "Darn it!", message: message, showIn: self).show()
         }
         
-        let signUp = SignUp(email: self.emailField.text,
+        let service = SignUp(email: self.emailField.text,
             password: self.passwordField.text,
             success: success,
             failure: failure)
-        signUp.perform()
+        service.perform()
+    }
+    
+    @IBAction func signIn() {
+        self.emailField.text = Utils.trimWhitespaceFromText(self.emailField.text)
+        
+        let success = {
+            self.presentingViewController!.dismissViewControllerAnimated(true, completion: nil)
+        }
+        
+        let failure = { (error: NSError) -> Void in
+            let errorText = error.userInfo!["error"] as! String
+            let message = "There was an error signing up :(\n\n" +
+            "\(errorText)"
+            Alert(title: "Darn it!", message: message, showIn: self).show()
+        }
+        
+        let service = SignIn(email: self.emailField.text,
+            password: self.passwordField.text,
+            success: success,
+            failure: failure)
+        service.perform()
     }
     
 }
