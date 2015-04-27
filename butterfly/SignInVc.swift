@@ -21,7 +21,23 @@ public class SignInVc : UIViewController {
     
     
     @IBAction func signUp() {
+        self.emailField.text = Utils.trimWhitespaceFromText(self.emailField.text)
         
+        let success = {
+            self.presentingViewController!.dismissViewControllerAnimated(true, completion: nil)
+        }
+        
+        let failure = { (error: NSError) -> Void in
+            let message = "There was an error signing up:(\n\n" +
+                "\(error.userInfo![Keys.errorHash])"
+            Alert(title: "Darn it!", message: message, showIn: self).show()
+        }
+        
+        let signUp = SignUp(email: self.emailField.text,
+            password: self.passwordField.text,
+            success: success,
+            failure: failure)
+        signUp.perform()
     }
     
 }
