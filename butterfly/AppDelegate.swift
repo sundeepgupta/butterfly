@@ -8,9 +8,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        
-        self.setupParse()
-        return true
+            
+            self.showSignIn()
+            self.setupParse()
+            return true
+    }
+    
+    // MARK: Private
+    private func showSignIn() {
+        self.window?.makeKeyAndVisible()
+        self.window?.rootViewController?.performSegueWithIdentifier("toSignIn", sender: nil)
     }
     
     private func setupParse() {
