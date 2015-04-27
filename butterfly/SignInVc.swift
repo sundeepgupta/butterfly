@@ -28,8 +28,9 @@ public class SignInVc : UIViewController {
         }
         
         let failure = { (error: NSError) -> Void in
-            let message = "There was an error signing up:(\n\n" +
-                "\(error.userInfo![Keys.errorHash])"
+            let errorText = error.userInfo!["error"] as! String
+            let message = "There was an error signing up :(\n\n" +
+                "\(errorText)"
             Alert(title: "Darn it!", message: message, showIn: self).show()
         }
         

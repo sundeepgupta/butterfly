@@ -23,7 +23,7 @@ public struct SignUp {
         
         if error != nil {
             self.failure(error!)
-            println("Error signing up user with email: \(self.email)\nError: \(error)")
+            println("Error signing up user with email: \(self.email)\nError: \(error!)")
         } else {
             self.success()
             println("Successfully signed up user with email: \(self.email)")
