@@ -119,7 +119,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="emailField" destination="Eyd-gF-uS8" id="txZ-QO-uEQ"/>
                         <outlet property="passwordField" destination="Oii-80-aeY" id="jME-8G-Waf"/>

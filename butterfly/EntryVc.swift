@@ -1,6 +1,6 @@
 import UIKit
 
-public class EntryVc: UIViewController {
+public class EntryVc : UIViewController {
     @IBOutlet private(set) public weak var textView: UITextView!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     

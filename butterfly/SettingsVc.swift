@@ -1,6 +1,6 @@
 import UIKit
 
-public class SettingsVc: UIViewController {
+public class SettingsVc : UIViewController {
     @IBOutlet private(set) public weak var emailField: UITextField!
     let settings = Settings()
     
