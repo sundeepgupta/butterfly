@@ -3,15 +3,15 @@ import Nimble
 import butterfly
 import UIKit
 
-class EntryVcSpec: QuickSpec {
+class NewMemoryVcSpec: QuickSpec {
     override func spec() {
-        var subject: EntryVc!
+        var subject: NewMemory!
         
         beforeEach {
             let storyboard = UIStoryboard(name: Constants.storyboardName, bundle: nil)
             let navigationController = storyboard.instantiateInitialViewController()
                 as! UINavigationController
-            subject = navigationController.viewControllers[0] as! EntryVc
+            subject = navigationController.viewControllers[0] as! NewMemory
         }
         
         context("IB connections") {

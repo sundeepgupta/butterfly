@@ -27,7 +27,8 @@ public struct SaveMemory {
     
     // MARK: Private
     private func remoteObject() -> PFObject {
-        let dictionary = self.memory.toDictionary()
+        var dictionary = self.memory.toDictionary()
+        dictionary["user"] = PFUser.currentUser()
         let className = Utils.stringForTypeOfThing(self.memory)
         return PFObject(className: className, dictionary: dictionary)
     }

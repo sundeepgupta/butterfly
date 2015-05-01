@@ -1,7 +1,7 @@
 import UIKit
 
-public class EntryVc : UIViewController {
-    @IBOutlet private(set) public weak var textView: UITextView!
+public class NewMemory : UIViewController {
+    @IBOutlet private(set) public weak var thoughts: UITextView!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
     public override func viewDidLoad() {
@@ -15,23 +15,21 @@ public class EntryVc : UIViewController {
     public override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.textView.becomeFirstResponder()
+        self.thoughts.becomeFirstResponder()
     }
     
     @IBAction func submit() {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        let success = {
+            self.performSegueWithIdentifier("toOldMemory", sender: nil)
+        }
         
-//        let success = {
-//            self.performSegueWithIdentifier("toOldMemory", sender: nil)
-//        }
-//        
-//        let failure = { (error: NSError) -> Void in
-//            let message = "There was an error saving your memory :(\n\n" +
-//                "\(error.userInfo![Keys.errorHash])"
-//            Alert(title: "Darn it!", message: message, showIn: self).show()
-//        }
-//        
-//        SaveMemory(thoughts: self.textView.text, success: success, failure: failure).perform()
+        let failure = { (error: NSError) -> Void in
+            let message = "There was an error saving your memory :(\n\n" +
+                "\(error.userInfo![Keys.errorHash])"
+            Alert(title: "Darn it!", message: message, showIn: self).show()
+        }
+        
+        SaveMemory(thoughts: self.thoughts.text, success: success, failure: failure).perform()
     }
     
     func adjustTextViewHeight(notification: NSNotification) {

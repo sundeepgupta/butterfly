@@ -7,7 +7,7 @@
         <!--New Memory-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController title="New Memory" automaticallyAdjustsScrollViewInsets="NO" id="vXZ-lx-hvc" customClass="EntryVc" customModule="butterfly" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="New Memory" automaticallyAdjustsScrollViewInsets="NO" id="vXZ-lx-hvc" customClass="NewMemory" customModule="butterfly" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -59,7 +59,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="bottomConstraint" destination="e2A-Tv-yeS" id="hee-QJ-mj6"/>
-                        <outlet property="textView" destination="O04-NJ-QiP" id="F3r-Cf-6PT"/>
+                        <outlet property="thoughts" destination="O04-NJ-QiP" id="2tw-8d-zcB"/>
                         <segue destination="JmM-wh-d3O" kind="show" identifier="toOldMemory" id="4uk-47-h40"/>
                     </connections>
                 </viewController>
@@ -211,10 +211,10 @@
             </objects>
             <point key="canvasLocation" x="1955" y="-109"/>
         </scene>
-        <!--Previous Memory-->
+        <!--Old Memory-->
         <scene sceneID="eIx-5b-Kn6">
             <objects>
-                <viewController title="Previous Memory" id="JmM-wh-d3O" sceneMemberID="viewController">
+                <viewController title="Old Memory" automaticallyAdjustsScrollViewInsets="NO" id="JmM-wh-d3O" customClass="OldMemoryVc" customModule="butterfly" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="C6w-Qc-bOo"/>
                         <viewControllerLayoutGuide type="bottom" id="1YO-Kr-b3L"/>
@@ -223,7 +223,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lLf-a2-XXg">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="bla" translatesAutoresizingMaskIntoConstraints="NO" id="lLf-a2-XXg">
                                 <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                                 <color key="backgroundColor" red="0.83110827728762238" green="0.91222895410000004" blue="0.90841215949949317" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -247,6 +247,9 @@
                             <constraint firstAttribute="trailing" secondItem="lLf-a2-XXg" secondAttribute="trailing" id="kRU-sk-NIa"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="thoughts" destination="lLf-a2-XXg" id="fKD-WN-kpn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SS7-aO-sNW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
