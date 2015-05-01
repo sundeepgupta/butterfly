@@ -20,6 +20,10 @@ public class SettingsVc : UIViewController {
         self.dismiss()
     }
     
+    @IBAction func signOut() {
+        SignOut.perform()
+    }
+    
     // MARK: Private
     private func loadEmail() {
         self.emailField.text = self.settings.email()

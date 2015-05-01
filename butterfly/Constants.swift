@@ -1,5 +1,6 @@
 public struct Constants {
     public static let storyboardName = "Main"
+    public static let signOutNotificationName = "userSignedOut"
 }
 
 public struct Keys {

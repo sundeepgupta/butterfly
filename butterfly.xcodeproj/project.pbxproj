@@ -24,6 +24,10 @@
 		276606721AEDC6FE00CFD504 /* UtilsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276606711AEDC6FE00CFD504 /* UtilsSpec.swift */; };
 		276606741AEDC93E00CFD504 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276606731AEDC93E00CFD504 /* SignUp.swift */; };
 		276606761AEE612700CFD504 /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276606751AEE612700CFD504 /* SignIn.swift */; };
+		276606781AEE632C00CFD504 /* SignOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276606771AEE632C00CFD504 /* SignOut.swift */; };
+		2766067A1AEF02F100CFD504 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276606791AEF02F100CFD504 /* User.swift */; };
+		2766067C1AEF056F00CFD504 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2766067B1AEF056F00CFD504 /* Router.swift */; };
+		2766067E1AF0568000CFD504 /* RouterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2766067D1AF0568000CFD504 /* RouterSpec.swift */; };
 		277C74931AE3DFFD007C2808 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277C74921AE3DFFD007C2808 /* Alert.swift */; };
 		277C74951AE3E031007C2808 /* AlertSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277C74941AE3E031007C2808 /* AlertSpec.swift */; };
 		2787778B1AE5B65A00E1A9F9 /* SaveMemory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2787778A1AE5B65A00E1A9F9 /* SaveMemory.swift */; };
@@ -64,6 +68,10 @@
 		276606711AEDC6FE00CFD504 /* UtilsSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilsSpec.swift; sourceTree = "<group>"; };
 		276606731AEDC93E00CFD504 /* SignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		276606751AEE612700CFD504 /* SignIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
+		276606771AEE632C00CFD504 /* SignOut.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignOut.swift; sourceTree = "<group>"; };
+		276606791AEF02F100CFD504 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2766067B1AEF056F00CFD504 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		2766067D1AF0568000CFD504 /* RouterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterSpec.swift; sourceTree = "<group>"; };
 		277C74921AE3DFFD007C2808 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		277C74941AE3E031007C2808 /* AlertSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertSpec.swift; sourceTree = "<group>"; };
 		2787778A1AE5B65A00E1A9F9 /* SaveMemory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveMemory.swift; sourceTree = "<group>"; };
@@ -159,6 +167,7 @@
 				27C37B671AE5E01D00BA5328 /* MemorySpec.swift */,
 				2766066F1AEDC2E900CFD504 /* SignInVcSpec.swift */,
 				276606711AEDC6FE00CFD504 /* UtilsSpec.swift */,
+				2766067D1AF0568000CFD504 /* RouterSpec.swift */,
 			);
 			name = Tests;
 			path = butterflyTests;
@@ -194,6 +203,7 @@
 		27C37B641AE5DA3500BA5328 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				276606791AEF02F100CFD504 /* User.swift */,
 				27C37B651AE5DA4500BA5328 /* Memory.swift */,
 			);
 			name = Models;
@@ -218,6 +228,8 @@
 				2787778A1AE5B65A00E1A9F9 /* SaveMemory.swift */,
 				276606731AEDC93E00CFD504 /* SignUp.swift */,
 				276606751AEE612700CFD504 /* SignIn.swift */,
+				276606771AEE632C00CFD504 /* SignOut.swift */,
+				2766067B1AEF056F00CFD504 /* Router.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -444,11 +456,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				276606781AEE632C00CFD504 /* SignOut.swift in Sources */,
 				27E1F6221AE2E01900FC6475 /* Constants.swift in Sources */,
 				2715030D1AB3D1A500C99C42 /* AppDelegate.swift in Sources */,
 				27576B4E1AE2B4AE00D15F32 /* SettingsVc.swift in Sources */,
 				276606741AEDC93E00CFD504 /* SignUp.swift in Sources */,
 				2787778B1AE5B65A00E1A9F9 /* SaveMemory.swift in Sources */,
+				2766067A1AEF02F100CFD504 /* User.swift in Sources */,
+				2766067C1AEF056F00CFD504 /* Router.swift in Sources */,
 				2766066E1AED75FF00CFD504 /* SignInVc.swift in Sources */,
 				271BFA6A1AB3E04100C151F9 /* EntryVc.swift in Sources */,
 				276606761AEE612700CFD504 /* SignIn.swift in Sources */,
@@ -470,6 +485,7 @@
 				276606701AEDC2E900CFD504 /* SignInVcSpec.swift in Sources */,
 				2714198B1AE307D200FEAD0A /* SettingsSpec.swift in Sources */,
 				27C37B681AE5E01D00BA5328 /* MemorySpec.swift in Sources */,
+				2766067E1AF0568000CFD504 /* RouterSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

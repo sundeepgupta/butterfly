@@ -14,21 +14,24 @@ public class EntryVc : UIViewController {
     
     public override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
         self.textView.becomeFirstResponder()
     }
     
     @IBAction func submit() {
-        let success = {
-            self.performSegueWithIdentifier("toOldMemory", sender: nil)
-        }
+        self.dismissViewControllerAnimated(true, completion: nil)
         
-        let failure = { (error: NSError) -> Void in
-            let message = "There was an error saving your memory :(\n\n" +
-                "\(error.userInfo![Keys.errorHash])"
-            Alert(title: "Darn it!", message: message, showIn: self).show()
-        }
-        
-        SaveMemory(thoughts: self.textView.text, success: success, failure: failure).perform()
+//        let success = {
+//            self.performSegueWithIdentifier("toOldMemory", sender: nil)
+//        }
+//        
+//        let failure = { (error: NSError) -> Void in
+//            let message = "There was an error saving your memory :(\n\n" +
+//                "\(error.userInfo![Keys.errorHash])"
+//            Alert(title: "Darn it!", message: message, showIn: self).show()
+//        }
+//        
+//        SaveMemory(thoughts: self.textView.text, success: success, failure: failure).perform()
     }
     
     func adjustTextViewHeight(notification: NSNotification) {
