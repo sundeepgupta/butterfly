@@ -21,7 +21,7 @@ public class SettingsVc : UIViewController {
     }
     
     @IBAction func signOut() {
-        SignOut.perform()
+        User.signOut()
     }
     
     // MARK: Private

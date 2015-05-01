@@ -34,11 +34,10 @@ public class SignInVc : UIViewController {
             Alert(title: "Darn it!", message: message, showIn: self).show()
         }
         
-        let service = SignUp(email: self.emailField.text,
+        User.signUp(email: self.emailField.text,
             password: self.passwordField.text,
             success: success,
             failure: failure)
-        service.perform()
     }
     
     @IBAction func signIn() {
@@ -55,11 +54,10 @@ public class SignInVc : UIViewController {
             Alert(title: "Darn it!", message: message, showIn: self).show()
         }
         
-        let service = SignIn(email: self.emailField.text,
+        User.signIn(email: self.emailField.text,
             password: self.passwordField.text,
             success: success,
             failure: failure)
-        service.perform()
     }
     
 }

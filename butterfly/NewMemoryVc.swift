@@ -29,7 +29,7 @@ public class NewMemory : UIViewController {
             Alert(title: "Darn it!", message: message, showIn: self).show()
         }
         
-        SaveMemory(thoughts: self.thoughts.text, success: success, failure: failure).perform()
+        Data.saveMemory(thoughts: self.thoughts.text, success: success, failure: failure)
     }
     
     func adjustTextViewHeight(notification: NSNotification) {
