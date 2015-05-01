@@ -20,6 +20,6 @@ public class OldMemoryVc: UIViewController {
                 showIn: self).show()
         }
         
-        OldMemory(success: success, failure: failure).perform()
+        FetchMemory(success: success, failure: failure).perform()
     }
 }

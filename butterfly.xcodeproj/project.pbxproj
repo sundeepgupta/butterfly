@@ -32,7 +32,7 @@
 		277C74951AE3E031007C2808 /* AlertSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277C74941AE3E031007C2808 /* AlertSpec.swift */; };
 		2787778B1AE5B65A00E1A9F9 /* SaveMemory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2787778A1AE5B65A00E1A9F9 /* SaveMemory.swift */; };
 		27B86A621AF30E0F008A60B7 /* OldMemoryVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B86A611AF30E0F008A60B7 /* OldMemoryVc.swift */; };
-		27B86A641AF3102A008A60B7 /* OldMemory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B86A631AF3102A008A60B7 /* OldMemory.swift */; };
+		27B86A641AF3102A008A60B7 /* FetchMemory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B86A631AF3102A008A60B7 /* FetchMemory.swift */; };
 		27C37B661AE5DA4500BA5328 /* Memory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C37B651AE5DA4500BA5328 /* Memory.swift */; };
 		27C37B681AE5E01D00BA5328 /* MemorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C37B671AE5E01D00BA5328 /* MemorySpec.swift */; };
 		27E0BF361AE72F4F001E0B35 /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 27E0BF351AE72F4F001E0B35 /* Secrets.plist */; };
@@ -78,7 +78,7 @@
 		277C74941AE3E031007C2808 /* AlertSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertSpec.swift; sourceTree = "<group>"; };
 		2787778A1AE5B65A00E1A9F9 /* SaveMemory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveMemory.swift; sourceTree = "<group>"; };
 		27B86A611AF30E0F008A60B7 /* OldMemoryVc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OldMemoryVc.swift; sourceTree = "<group>"; };
-		27B86A631AF3102A008A60B7 /* OldMemory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OldMemory.swift; sourceTree = "<group>"; };
+		27B86A631AF3102A008A60B7 /* FetchMemory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchMemory.swift; sourceTree = "<group>"; };
 		27C37B631AE5D6F200BA5328 /* butterfly-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "butterfly-Bridging-Header.h"; sourceTree = "<group>"; };
 		27C37B651AE5DA4500BA5328 /* Memory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Memory.swift; sourceTree = "<group>"; };
 		27C37B671AE5E01D00BA5328 /* MemorySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemorySpec.swift; sourceTree = "<group>"; };
@@ -235,7 +235,7 @@
 				276606751AEE612700CFD504 /* SignIn.swift */,
 				276606771AEE632C00CFD504 /* SignOut.swift */,
 				2766067B1AEF056F00CFD504 /* Router.swift */,
-				27B86A631AF3102A008A60B7 /* OldMemory.swift */,
+				27B86A631AF3102A008A60B7 /* FetchMemory.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -465,7 +465,7 @@
 				276606781AEE632C00CFD504 /* SignOut.swift in Sources */,
 				27E1F6221AE2E01900FC6475 /* Constants.swift in Sources */,
 				2715030D1AB3D1A500C99C42 /* AppDelegate.swift in Sources */,
-				27B86A641AF3102A008A60B7 /* OldMemory.swift in Sources */,
+				27B86A641AF3102A008A60B7 /* FetchMemory.swift in Sources */,
 				27576B4E1AE2B4AE00D15F32 /* SettingsVc.swift in Sources */,
 				276606741AEDC93E00CFD504 /* SignUp.swift in Sources */,
 				2787778B1AE5B65A00E1A9F9 /* SaveMemory.swift in Sources */,
