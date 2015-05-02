@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		271419841AE2E19100FEAD0A /* SettingsVcSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E1F61F1AE2DF6C00FC6475 /* SettingsVcSpec.swift */; };
 		271419861AE2E68600FEAD0A /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271419851AE2E68600FEAD0A /* Utils.swift */; };
-		271419881AE3072000FEAD0A /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271419871AE3072000FEAD0A /* Settings.swift */; };
 		2714198B1AE307D200FEAD0A /* SettingsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271419891AE3079B00FEAD0A /* SettingsSpec.swift */; };
 		2715030D1AB3D1A500C99C42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2715030C1AB3D1A500C99C42 /* AppDelegate.swift */; };
 		271503121AB3D1A500C99C42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 271503101AB3D1A500C99C42 /* Main.storyboard */; };
@@ -48,7 +47,6 @@
 
 /* Begin PBXFileReference section */
 		271419851AE2E68600FEAD0A /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		271419871AE3072000FEAD0A /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		271419891AE3079B00FEAD0A /* SettingsSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsSpec.swift; sourceTree = "<group>"; };
 		271503071AB3D1A500C99C42 /* butterfly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = butterfly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2715030B1AB3D1A500C99C42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -220,7 +218,6 @@
 		27C6DEB61AE3323200C16E64 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				271419871AE3072000FEAD0A /* Settings.swift */,
 				277C74921AE3DFFD007C2808 /* Alert.swift */,
 				2766067B1AEF056F00CFD504 /* Router.swift */,
 				27B86A651AF3AE84008A60B7 /* Data.swift */,
@@ -456,7 +453,6 @@
 				2766067A1AEF02F100CFD504 /* User.swift in Sources */,
 				2766067C1AEF056F00CFD504 /* Router.swift in Sources */,
 				271BFA6A1AB3E04100C151F9 /* NewMemoryVc.swift in Sources */,
-				271419881AE3072000FEAD0A /* Settings.swift in Sources */,
 				27B86A661AF3AE84008A60B7 /* Data.swift in Sources */,
 				277C74931AE3DFFD007C2808 /* Alert.swift in Sources */,
 				27B86A621AF30E0F008A60B7 /* OldMemoryVc.swift in Sources */,

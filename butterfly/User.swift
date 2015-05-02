@@ -23,10 +23,10 @@ public struct User {
         
         if error != nil {
             failure(error!)
-            println("Error signing up user with email: \(email)\nError: \(error!)")
+            println("Error signing in user with email: \(email)\nError: \(error!)")
         } else {
             success()
-            println("Successfully signed up user with email: \(email)")
+            println("Successfully signed in user with email: \(email)")
         }
     }
     
@@ -37,6 +37,26 @@ public struct User {
     
     public static func isSignedOut() -> Bool {
         return PFUser.currentUser() == nil
+    }
+    
+    public static func email() -> String {
+        return PFUser.currentUser()!.username!
+    }
+    
+    public static func updateEmail(email: String, success: () -> Void, failure: NSError -> Void) {
+        
+        var user = PFUser.currentUser()!
+        user.username = email
+        var error: NSError?
+        user.save(&error)
+        
+        if error != nil {
+            failure(error!)
+            println("Error updating user with email: \(email)\nError: \(error!)")
+        } else {
+            success()
+            println("Successfully updated user with email: \(email)")
+        }
     }
     
     

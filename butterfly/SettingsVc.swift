@@ -1,19 +1,26 @@
 import UIKit
 
 public class SettingsVc : UIViewController {
-    @IBOutlet private(set) public weak var emailField: UITextField!
-    let settings = Settings()
+    @IBOutlet private(set) weak var emailField: UITextField!
+    
     
     public override func viewDidLoad() {
         super.viewDidLoad()
-        self.loadEmail()
-        self.emailField.becomeFirstResponder()
+        self.loadSettings()
     }
     
     @IBAction func save() {
-        self.emailField.text = Utils.trimWhitespaceFromText(self.emailField.text)
-        self.settings.saveEmail(self.emailField.text)
-        self.dismiss()
+        let email = Utils.trimWhitespaceFromText(self.emailField.text)
+        
+        let success = {
+            self.dismiss()
+        }
+        
+        let failure = { (error: NSError) in
+            Alert(title: "Whoops!", message: "Error updating email :(\n\n\(error.localizedDescription)", showIn: self).show()
+        }
+        
+        User.updateEmail(email, success: success, failure: failure)
     }
     
     @IBAction func cancel() {
@@ -25,8 +32,8 @@ public class SettingsVc : UIViewController {
     }
     
     // MARK: Private
-    private func loadEmail() {
-        self.emailField.text = self.settings.email()
+    private func loadSettings() {
+        self.emailField.text = User.email()
     }
     
     private func dismiss() {
