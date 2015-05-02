@@ -3,10 +3,15 @@ import UIKit
 public class SettingsVc : UIViewController {
     @IBOutlet private(set) weak var emailField: UITextField!
     
-    
     public override func viewDidLoad() {
         super.viewDidLoad()
         self.loadSettings()
+    }
+    
+    
+    // MARK: IBActions
+    @IBAction func updatePassword() {
+        
     }
     
     @IBAction func save() {
@@ -17,7 +22,7 @@ public class SettingsVc : UIViewController {
         }
         
         let failure = { (error: NSError) in
-            Alert(title: "Whoops!", message: "Error updating email :(\n\n\(error.localizedDescription)", showIn: self).show()
+            Alert.showBasic(title: "Whoops!", message: "Error updating email :(\n\n\(error.localizedDescription)", viewController: self)
         }
         
         User.updateEmail(email, success: success, failure: failure)
@@ -30,6 +35,10 @@ public class SettingsVc : UIViewController {
     @IBAction func signOut() {
         User.signOut()
     }
+    
+    
+    
+    
     
     // MARK: Private
     private func loadSettings() {

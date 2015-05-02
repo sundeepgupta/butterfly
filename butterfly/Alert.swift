@@ -1,21 +1,11 @@
 import UIKit
 
 public struct Alert {
-    let alertController: UIAlertController
-    let viewController: UIViewController
-
-    public init(title: String, message: String, showIn viewController: UIViewController) {
-        self.alertController = UIAlertController(title: title,
-            message: message,
-            preferredStyle: .Alert)
+    public static func showBasic(#title: String, message: String, viewController: UIViewController) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
         let action = UIAlertAction(title: "OK", style: .Default, handler: nil)
-        self.alertController.addAction(action)
-        
-        self.viewController = viewController
+        alertController.addAction(action)
+        viewController.presentViewController(alertController, animated: true, completion: nil)
     }
     
-    public func show() {
-        self.viewController
-            .presentViewController(self.alertController, animated: true, completion: nil)
-    }
 }

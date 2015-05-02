@@ -26,7 +26,7 @@ public class NewMemory : UIViewController {
         let failure = { (error: NSError) -> Void in
             let message = "There was an error saving your memory :(\n\n" +
                 "\(error.userInfo![Keys.errorHash])"
-            Alert(title: "Darn it!", message: message, showIn: self).show()
+            Alert.showBasic(title: "Darn!", message: message, viewController: self)
         }
         
         Data.saveMemory(thoughts: self.thoughts.text, success: success, failure: failure)
