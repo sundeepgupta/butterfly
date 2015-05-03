@@ -22,8 +22,8 @@ public class SettingsVc : UIViewController {
             println("Password verification failed with error: \(error.localizedDescription)")
         }
 
-        let verify = VerifyPassword.alert(email: self.emailField.text, success: success, failure: failure)
-        self.presentViewController(verify, animated: true, completion: nil)
+        let alert = Alert.password(email: self.emailField.text, success: success, failure: failure)
+        self.presentViewController(alert, animated: true, completion: nil)
     }
     
     @IBAction func save() {
