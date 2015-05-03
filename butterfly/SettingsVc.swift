@@ -1,25 +1,26 @@
 import UIKit
 
 public class SettingsVc : UIViewController {
-    @IBOutlet private(set) weak var emailField: UITextField!
+    @IBOutlet private weak var emailField: UITextField!
+    @IBOutlet private weak var passwordField: UITextField!
     
     public override func viewDidLoad() {
         super.viewDidLoad()
         self.loadSettings()
     }
     
-    
-    // MARK: IBActions
-    @IBAction func updatePassword() {
+    @IBAction func updateCredentials() {
         // If user changes their email before pressing this button, is that ok?
         
-        let success = {
-            println("success")
-            // let them change their password now (and probably email too)
+        let success = { () -> Void in
+            self.emailField.enabled = true
+            self.passwordField.enabled = true
         }
         
-        let failure = { (error: NSError) in
-            println("Password verification failed with error: \(error.localizedDescription)")
+        let failure = { (error: NSError) -> Void in
+            let message = "Your password could not be verified."
+            let alert = Alert.basic(title: "Whoops!", message: message)
+            self.presentViewController(alert, animated: true, completion: nil)
         }
 
         let alert = Alert.password(email: self.emailField.text, success: success, failure: failure)
