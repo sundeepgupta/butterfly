@@ -4,7 +4,7 @@ public struct VerifyPassword {
     public static func alert(#email: String, success: () -> Void, failure: NSError -> Void) -> UIAlertController {
         var alert = UIAlertController(title: nil, message: "Enter your password:", preferredStyle: .Alert)
         
-        let handler = { (action: UIAlertAction!) in
+        let handler = { (action: UIAlertAction!) -> Void in
             let textField = alert.textFields!.first as! UITextField
             let password = textField.text
             

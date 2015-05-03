@@ -14,8 +14,9 @@ public class OldMemoryVc: UIViewController {
             self.thoughts.text = memory.thoughts
         }
         
-        let failure = { (error: NSError) in
-            Alert.showBasic(title: "Whoops!", message: "Error showing you an old memory :(\n\n\(error.localizedDescription)", viewController: self)
+        let failure = { (error: NSError) -> Void in
+            let alert = Alert.basic(title: "Whoops!", message: "Error showing you an old memory :(\n\n\(error.localizedDescription)")
+            self.presentViewController(alert, animated: true, completion: nil)
         }
         
         Data.fetchMemory(success: success, failure: failure)

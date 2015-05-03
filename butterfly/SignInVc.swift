@@ -30,7 +30,8 @@ public class SignInVc : UIViewController {
         let failure = { (error: NSError) -> Void in
             let errorText = error.userInfo!["error"] as! String
             let message = "There was an error signing up :(\n\n\(errorText)"
-            Alert.showBasic(title: "Darn!", message: message, viewController: self)
+            let alert = Alert.basic(title: "Darn!", message: message)
+            self.presentViewController(alert, animated: true, completion: nil)
         }
         
         User.signUp(email: self.emailField.text,
@@ -50,7 +51,8 @@ public class SignInVc : UIViewController {
             let errorText = error.userInfo!["error"] as! String
             let message = "There was an error signing up :(\n\n" +
             "\(errorText)"
-            Alert.showBasic(title: "Darn!", message: message, viewController: self)
+            let alert = Alert.basic(title: "Darn!", message: message)
+            self.presentViewController(alert, animated: true, completion: nil)
         }
         
         User.signIn(email: self.emailField.text,

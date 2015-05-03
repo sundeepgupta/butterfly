@@ -33,8 +33,9 @@ public class SettingsVc : UIViewController {
             self.dismiss()
         }
         
-        let failure = { (error: NSError) in
-            Alert.showBasic(title: "Whoops!", message: "Error updating email :(\n\n\(error.localizedDescription)", viewController: self)
+        let failure = { (error: NSError) -> Void in
+            let alert = Alert.basic(title: "Whoops!", message: "Error updating email :(\n\n\(error.localizedDescription)")
+            self.presentViewController(alert, animated: true, completion: nil)
         }
         
         User.updateEmail(email, success: success, failure: failure)
