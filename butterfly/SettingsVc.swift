@@ -10,8 +10,6 @@ public class SettingsVc : UIViewController {
     }
     
     @IBAction func updateCredentials() {
-        // If user changes their email before pressing this button, is that ok?
-        
         let success = { () -> Void in
             self.emailField.enabled = true
             self.passwordField.enabled = true
@@ -29,7 +27,8 @@ public class SettingsVc : UIViewController {
     
     @IBAction func save() {
         let email = Utils.trimWhitespaceFromText(self.emailField.text)
-        
+        let password = self.passwordField.text
+    
         let success = {
             self.dismiss()
         }
@@ -39,7 +38,7 @@ public class SettingsVc : UIViewController {
             self.presentViewController(alert, animated: true, completion: nil)
         }
         
-        User.updateEmail(email, success: success, failure: failure)
+        User.updateCredentials(email: email, password: password, success: success, failure: failure)
     }
     
     @IBAction func cancel() {

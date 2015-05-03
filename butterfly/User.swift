@@ -43,19 +43,26 @@ public struct User {
         return PFUser.currentUser()!.username!
     }
     
-    public static func updateEmail(email: String, success: () -> Void, failure: NSError -> Void) {
-        
+    public static func updateCredentials(#email: String, password: String, success: () -> Void, failure: NSError -> Void) {
         var user = PFUser.currentUser()!
-        user.username = email
+        
+        if email != "" && email != user.username {
+            user.username = email
+        }
+        
+        if password != "" {
+            user.password = password
+        }
+        
         var error: NSError?
         user.save(&error)
         
         if error != nil {
             failure(error!)
-            println("Error updating user with email: \(email)\nError: \(error!)")
+            println("Error updating credentials for user with email: \(email)\nError: \(error!)")
         } else {
             success()
-            println("Successfully updated user with email: \(email)")
+            println("Successfully updated credentials for user with email: \(email)")
         }
     }
     
