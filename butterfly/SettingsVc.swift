@@ -11,7 +11,20 @@ public class SettingsVc : UIViewController {
     
     // MARK: IBActions
     @IBAction func updatePassword() {
+        // If user changes their email before pressing this button, is that ok?
         
+        let verifier = { return }
+        
+        let success = {
+            // let them change their password now (and probably email too)
+        }
+        
+        let failure = { (error: NSError) in
+            println("Password verification failed with error: \(error.localizedDescription)")
+        }
+        
+        let passwordVerifier = VerifyPassword(email: self.emailField.text, success: success, failure: failure)
+        self.presentViewController(passwordVerifier.alert, animated: true, completion: nil)
     }
     
     @IBAction func save() {

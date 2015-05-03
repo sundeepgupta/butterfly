@@ -30,6 +30,7 @@
 		27B86A661AF3AE84008A60B7 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B86A651AF3AE84008A60B7 /* Data.swift */; };
 		27C37B661AE5DA4500BA5328 /* Memory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C37B651AE5DA4500BA5328 /* Memory.swift */; };
 		27C37B681AE5E01D00BA5328 /* MemorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C37B671AE5E01D00BA5328 /* MemorySpec.swift */; };
+		27CF79431AF5A79B00DE3084 /* VerifyPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CF79421AF5A79B00DE3084 /* VerifyPassword.swift */; };
 		27E0BF361AE72F4F001E0B35 /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 27E0BF351AE72F4F001E0B35 /* Secrets.plist */; };
 		27E1F6221AE2E01900FC6475 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E1F6211AE2E01900FC6475 /* Constants.swift */; };
 		BDD0ECCDBB089DE57736089E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77D73D9C3B2BCFF559CDE2BC /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -72,6 +73,7 @@
 		27C37B631AE5D6F200BA5328 /* butterfly-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "butterfly-Bridging-Header.h"; sourceTree = "<group>"; };
 		27C37B651AE5DA4500BA5328 /* Memory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Memory.swift; sourceTree = "<group>"; };
 		27C37B671AE5E01D00BA5328 /* MemorySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemorySpec.swift; sourceTree = "<group>"; };
+		27CF79421AF5A79B00DE3084 /* VerifyPassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyPassword.swift; sourceTree = "<group>"; };
 		27E0BF351AE72F4F001E0B35 /* Secrets.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = SOURCE_ROOT; };
 		27E1F61F1AE2DF6C00FC6475 /* SettingsVcSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVcSpec.swift; sourceTree = "<group>"; };
 		27E1F6211AE2E01900FC6475 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 				277C74921AE3DFFD007C2808 /* Alert.swift */,
 				2766067B1AEF056F00CFD504 /* Router.swift */,
 				27B86A651AF3AE84008A60B7 /* Data.swift */,
+				27CF79421AF5A79B00DE3084 /* VerifyPassword.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -452,6 +455,7 @@
 				27576B4E1AE2B4AE00D15F32 /* SettingsVc.swift in Sources */,
 				2766067A1AEF02F100CFD504 /* User.swift in Sources */,
 				2766067C1AEF056F00CFD504 /* Router.swift in Sources */,
+				27CF79431AF5A79B00DE3084 /* VerifyPassword.swift in Sources */,
 				271BFA6A1AB3E04100C151F9 /* NewMemoryVc.swift in Sources */,
 				27B86A661AF3AE84008A60B7 /* Data.swift in Sources */,
 				277C74931AE3DFFD007C2808 /* Alert.swift in Sources */,

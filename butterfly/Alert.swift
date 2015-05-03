@@ -6,6 +6,13 @@ public struct Alert {
         let action = UIAlertAction(title: "OK", style: .Default, handler: nil)
         alertController.addAction(action)
         viewController.presentViewController(alertController, animated: true, completion: nil)
+        
+        // alert should not present itself
     }
+    
+    
+    
+    
+    
     
 }
