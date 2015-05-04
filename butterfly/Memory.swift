@@ -12,10 +12,7 @@ public struct Memory {
         self.thoughts = thoughts
     }
     
-    
-    
-    func toDictionary() -> Dictionary<String, AnyObject> {
+    public func toDictionary() -> Dictionary<String, AnyObject> {
         return ["thoughts": self.thoughts]
     }
-    
 }

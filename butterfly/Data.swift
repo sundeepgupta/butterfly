@@ -44,6 +44,5 @@ public struct Data {
         let thoughts = remoteObject!["thoughts"] as! String
         return Memory(thoughts: thoughts)
     }
-    
 }
 

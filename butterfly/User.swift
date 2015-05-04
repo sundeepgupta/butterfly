@@ -37,6 +37,7 @@ public struct User {
     
     public static func isSignedOut() -> Bool {
         return PFUser.currentUser() == nil
+        // need to check whether the token is valid or not also
     }
     
     public static func email() -> String {

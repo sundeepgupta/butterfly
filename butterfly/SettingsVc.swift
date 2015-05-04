@@ -3,6 +3,7 @@ import UIKit
 public class SettingsVc : UIViewController {
     @IBOutlet private weak var emailField: UITextField!
     @IBOutlet private weak var passwordField: UITextField!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -13,6 +14,7 @@ public class SettingsVc : UIViewController {
         let success = { () -> Void in
             self.emailField.enabled = true
             self.passwordField.enabled = true
+            self.saveButton.enabled = true
         }
         
         let failure = { (error: NSError) -> Void in
