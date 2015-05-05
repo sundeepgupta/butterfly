@@ -1,4 +1,3 @@
-
 var Memory = Parse.Object.extend("Memory");
 
 Parse.Cloud.beforeSave("Memory", function(request, response) {
@@ -32,4 +31,8 @@ function positionForMemory(memory) {
 	}	
 	
 	return position;
+}
+
+Parse.Cloud.define("randomMemory", function(request, response) {
+
 }

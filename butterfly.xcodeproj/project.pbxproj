@@ -17,6 +17,8 @@
 		271503231AB3D1A600C99C42 /* NewMemoryVcSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271503221AB3D1A600C99C42 /* NewMemoryVcSpec.swift */; };
 		271B0CD21AF3B892007787D9 /* SignInVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271B0CD11AF3B892007787D9 /* SignInVc.swift */; };
 		271BFA6A1AB3E04100C151F9 /* NewMemoryVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271BFA691AB3E04100C151F9 /* NewMemoryVc.swift */; };
+		271CA2211AF872BC00B62210 /* main.js in Resources */ = {isa = PBXBuildFile; fileRef = 271CA21D1AF872BC00B62210 /* main.js */; };
+		271CA2221AF872BC00B62210 /* global.json in Resources */ = {isa = PBXBuildFile; fileRef = 271CA21F1AF872BC00B62210 /* global.json */; };
 		274BD766C2481AF61892DC6A /* Pods_butterflyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A49BB8426AAB58A3B5B9ACC /* Pods_butterflyTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		27576B4E1AE2B4AE00D15F32 /* SettingsVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27576B4D1AE2B4AE00D15F32 /* SettingsVc.swift */; };
 		276606701AEDC2E900CFD504 /* SignInVcSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2766066F1AEDC2E900CFD504 /* SignInVcSpec.swift */; };
@@ -59,6 +61,8 @@
 		271503221AB3D1A600C99C42 /* NewMemoryVcSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMemoryVcSpec.swift; sourceTree = "<group>"; };
 		271B0CD11AF3B892007787D9 /* SignInVc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInVc.swift; sourceTree = "<group>"; };
 		271BFA691AB3E04100C151F9 /* NewMemoryVc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = NewMemoryVc.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		271CA21D1AF872BC00B62210 /* main.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = main.js; sourceTree = "<group>"; };
+		271CA21F1AF872BC00B62210 /* global.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = global.json; sourceTree = "<group>"; };
 		27576B4D1AE2B4AE00D15F32 /* SettingsVc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVc.swift; sourceTree = "<group>"; };
 		2766066F1AEDC2E900CFD504 /* SignInVcSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInVcSpec.swift; sourceTree = "<group>"; };
 		276606711AEDC6FE00CFD504 /* UtilsSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilsSpec.swift; sourceTree = "<group>"; };
@@ -108,6 +112,7 @@
 		271502FE1AB3D1A500C99C42 = {
 			isa = PBXGroup;
 			children = (
+				271CA21B1AF872BC00B62210 /* parseApp */,
 				271503091AB3D1A500C99C42 /* App */,
 				746089FB8D44BA88304A868D /* Frameworks */,
 				71784C3FD282F31555E790ED /* Pods */,
@@ -174,6 +179,39 @@
 			);
 			name = "Supporting Files";
 			path = butterflyTests;
+			sourceTree = "<group>";
+		};
+		271CA21B1AF872BC00B62210 /* parseApp */ = {
+			isa = PBXGroup;
+			children = (
+				271CA21C1AF872BC00B62210 /* cloud */,
+				271CA21E1AF872BC00B62210 /* config */,
+				271CA2201AF872BC00B62210 /* public */,
+			);
+			path = parseApp;
+			sourceTree = "<group>";
+		};
+		271CA21C1AF872BC00B62210 /* cloud */ = {
+			isa = PBXGroup;
+			children = (
+				271CA21D1AF872BC00B62210 /* main.js */,
+			);
+			path = cloud;
+			sourceTree = "<group>";
+		};
+		271CA21E1AF872BC00B62210 /* config */ = {
+			isa = PBXGroup;
+			children = (
+				271CA21F1AF872BC00B62210 /* global.json */,
+			);
+			path = config;
+			sourceTree = "<group>";
+		};
+		271CA2201AF872BC00B62210 /* public */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = public;
 			sourceTree = "<group>";
 		};
 		277C74901AE3DF69007C2808 /* Resources */ = {
@@ -333,10 +371,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				271CA2221AF872BC00B62210 /* global.json in Resources */,
 				27E0BF361AE72F4F001E0B35 /* Secrets.plist in Resources */,
 				271503121AB3D1A500C99C42 /* Main.storyboard in Resources */,
 				271503171AB3D1A500C99C42 /* LaunchScreen.xib in Resources */,
 				271503141AB3D1A500C99C42 /* Images.xcassets in Resources */,
+				271CA2211AF872BC00B62210 /* main.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
