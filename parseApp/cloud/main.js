@@ -33,6 +33,37 @@ function positionForMemory(memory) {
 	return position;
 }
 
-Parse.Cloud.define("randomMemory", function(request, response) {
 
+Parse.Cloud.define("randomMemory", function(request, response) {
+	lastMemoryQuery().find({
+		success: function(objects) {
+			var lastPosition = positionForMemory(objects[0]);
+
+			if (lastPosition == 0) {
+				// error, should never happen
+			}
+
+			if (lastPosition == 1) {
+				// don't return it because it will be their first memory they just saved.
+			}
+
+			var randomPosition = Math.ceil(Math.random()*lastPosition));
+			
+			var query = new Parse.Query(Memory);
+			query.equalTo("position", randomPosition);
+			query.find({
+				success: function(objects) {
+					var memory = objects[0];
+					response.success(memory);
+				},
+
+				error: function(error) {
+					response.error(error);
+				}
+			});
+		},
+		error: function(error) {
+			response.error(error);
+		}
+	});
 }
