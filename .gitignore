@@ -27,3 +27,6 @@ Pods/
 
 # Custom
 Secrets.plist
+
+# Parse
+global.json
