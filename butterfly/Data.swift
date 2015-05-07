@@ -19,9 +19,6 @@ public struct Data {
     public static func fetchMemory(#success: Memory -> Void, failure: NSError -> Void) {
         var error: NSError?
         let remoteObject: AnyObject? = PFCloud.callFunction("randomMemory", withParameters: nil, error: &error)
-        println(remoteObject)
-        
-        
 
         if error != nil {
             failure(error!)
@@ -43,8 +40,11 @@ public struct Data {
     }
     
     private static func memoryFromRemoteObject(remoteObject: AnyObject?) -> Memory {
-        let thoughts = remoteObject!["thoughts"] as! String
-        return Memory(thoughts: thoughts)
+        if let object: AnyObject = remoteObject {
+            return Memory(thoughts: remoteObject!["thoughts"] as! String)
+        } else {
+            return NullMemory()
+        }
     }
 }
 

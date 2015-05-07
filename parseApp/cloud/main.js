@@ -9,7 +9,7 @@ Parse.Cloud.define("randomMemory", function(request, response) {
 			var lastPosition = _positionForMemory(objects[0]);
 
 			if (lastPosition == 1) {
-				response.error("This is your first memory, nothing to show you yet :)");
+				response.success();
 			}
 
 			var randomPosition = _randomPosition(lastPosition);
@@ -24,7 +24,7 @@ Parse.Cloud.define("randomMemory", function(request, response) {
 				}
 			});
 		},
-		
+
 		error: function(error) {
 			response.error(error);
 		}
