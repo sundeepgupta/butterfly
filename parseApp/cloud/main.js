@@ -1,14 +1,44 @@
-
-var Memory = Parse.Object.extend("Memory");
-
+// Public
 Parse.Cloud.beforeSave("Memory", function(request, response) {
-	incrementPosition(request.object, response);
+	_incrementPosition(request.object, response);
 });
 
-function incrementPosition(memory, response) {
-	lastMemoryQuery().find({
+Parse.Cloud.define("randomMemory", function(request, response) {
+	_lastMemoryQuery().find({
 		success: function(objects) {
-			var lastPosition = positionForMemory(objects[0]);
+			var lastPosition = _positionForMemory(objects[0]);
+
+			if (lastPosition == 1) {
+				response.error("This is your first memory, nothing to show you yet :)");
+			}
+
+			var randomPosition = _randomPosition(lastPosition);
+			
+			_memoryAtPositionQuery(randomPosition).find({
+				success: function(objects) {
+					response.success(objects[0]);
+				},
+
+				error: function(error) {
+					response.error(error);
+				}
+			});
+		},
+		
+		error: function(error) {
+			response.error(error);
+		}
+	});
+})
+
+
+// Private
+var Memory = Parse.Object.extend("Memory");
+
+function _incrementPosition(memory, response) {
+	_lastMemoryQuery().find({
+		success: function(objects) {
+			var lastPosition = _positionForMemory(objects[0]);
 			memory.set("position", lastPosition + 1);
 			response.success();
 		},
@@ -18,7 +48,7 @@ function incrementPosition(memory, response) {
 	});
 }
 
-function lastMemoryQuery() {
+function _lastMemoryQuery() {
 	var query = new Parse.Query(Memory);
 	query.equalTo("user", Parse.User.current());
 	query.descending("createdAt").limit(1);
@@ -26,7 +56,7 @@ function lastMemoryQuery() {
 	return query;
 }
 
-function positionForMemory(memory) {
+function _positionForMemory(memory) {
 	var position = 0;
 
 	if (memory != undefined && memory.get("position") != undefined) {
@@ -36,37 +66,19 @@ function positionForMemory(memory) {
 	return position;
 }
 
+function _memoryAtPositionQuery(position) {
+	var query = new Parse.Query(Memory);
+	query.equalTo("user", Parse.User.current());
+	query.equalTo("position", position);
+	
+	return query;
+}
 
-Parse.Cloud.define("randomMemory", function(request, response) {
-	lastMemoryQuery().find({
-		success: function(objects) {
-			var lastPosition = positionForMemory(objects[0]);
+function _randomPosition(lastPosition) {
+	// This gives us 1 through lastPosition - 1. We don't want to include lastPosition
+	// because it corresponds to the memory that was just saved.
 
-			if (lastPosition == 0) {
-				// error, should never happen
-			}
-
-			if (lastPosition == 1) {
-				// don't return it because it will be their first memory they just saved.
-			}
-
-			var randomPosition = Math.ceil(Math.random()*lastPosition);
-			
-			var query = new Parse.Query(Memory);
-			query.equalTo("position", randomPosition);
-			query.find({
-				success: function(objects) {
-					var memory = objects[0];
-					response.success(memory);
-				},
-
-				error: function(error) {
-					response.error(error);
-				}
-			});
-		},
-		error: function(error) {
-			response.error(error);
-		}
-	});
-})
+	var maxPosition = lastPosition - 1;
+	
+	return Math.floor(Math.random()*maxPosition) + 1;
+}

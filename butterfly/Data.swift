@@ -17,10 +17,12 @@ public struct Data {
     }
     
     public static func fetchMemory(#success: Memory -> Void, failure: NSError -> Void) {
-        let query = PFQuery(className: "Memory")
         var error: NSError?
-        let remoteObject = query.getFirstObject(&error)
+        let remoteObject: AnyObject? = PFCloud.callFunction("randomMemory", withParameters: nil, error: &error)
+        println(remoteObject)
         
+        
+
         if error != nil {
             failure(error!)
             println("Error fetching old memory: \(error)")
@@ -40,7 +42,7 @@ public struct Data {
         return PFObject(className: className, dictionary: dictionary)
     }
     
-    private static func memoryFromRemoteObject(remoteObject: PFObject?) -> Memory {
+    private static func memoryFromRemoteObject(remoteObject: AnyObject?) -> Memory {
         let thoughts = remoteObject!["thoughts"] as! String
         return Memory(thoughts: thoughts)
     }
