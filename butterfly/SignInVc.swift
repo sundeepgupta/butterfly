@@ -10,7 +10,7 @@ public class SignInVc : UIViewController {
         
         #if DEBUG
             self.emailField.text = "sundeepkgupta@gmail.com"
-            self.passwordField.text = "somePassword"
+            self.passwordField.text = "bla"
         #endif
     }
     
