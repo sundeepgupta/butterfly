@@ -67,6 +67,19 @@ public struct User {
         }
     }
     
+    public static func resetPassword(#email: String, success: () -> Void, failure: NSError -> Void) {
+        var error: NSError?
+        PFUser.requestPasswordResetForEmail(email, error: &error)
+        
+        if error != nil {
+            failure(error!)
+            println("Error requesting password reset for user with email: \(email)\nError: \(error!)")
+        } else {
+            success()
+            println("Successfully requested password reset for user with email: \(email)")
+        }
+    }
+    
     
     // MARK: Private
     private static func userObject(#email: String, password: String) -> PFUser {
