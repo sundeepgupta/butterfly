@@ -1,7 +1,6 @@
 import UIKit
 
 public class SettingsVc : UIViewController, UITextFieldDelegate {
-    @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var subjectField: UITextField!
     
     public override func viewDidLoad() {
@@ -22,6 +21,11 @@ public class SettingsVc : UIViewController, UITextFieldDelegate {
 
         let alert = Alert.password(email: User.email(), success: success, failure: failure)
         self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func save() {
+        Settings.saveMailSubject(self.subjectField.text)
+        self.dismiss()
     }
     
     @IBAction func cancel() {
@@ -47,7 +51,7 @@ public class SettingsVc : UIViewController, UITextFieldDelegate {
     
     // MARK: Private
     private func loadSettings() {
-        
+        self.subjectField.text = Settings.mailSubject()
     }
     
     private func dismiss() {

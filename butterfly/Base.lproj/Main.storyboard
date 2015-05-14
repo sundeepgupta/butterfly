@@ -214,14 +214,13 @@
                                 <action selector="cancel" destination="2UK-Oj-E2K" id="EMd-cT-sRJ"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="save" id="23X-ny-gSs">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="23X-ny-gSs">
                             <connections>
-                                <action selector="save" destination="2UK-Oj-E2K" id="B3w-Kg-SpR"/>
+                                <action selector="save" destination="2UK-Oj-E2K" id="Y8h-zc-RsT"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="saveButton" destination="23X-ny-gSs" id="LOC-V1-GFA"/>
                         <outlet property="subjectField" destination="tz7-TJ-Fug" id="HEL-cY-fgf"/>
                     </connections>
                 </viewController>

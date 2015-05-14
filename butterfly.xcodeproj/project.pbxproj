@@ -28,6 +28,7 @@
 		2766067E1AF0568000CFD504 /* RouterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2766067D1AF0568000CFD504 /* RouterSpec.swift */; };
 		277C74931AE3DFFD007C2808 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277C74921AE3DFFD007C2808 /* Alert.swift */; };
 		277C74951AE3E031007C2808 /* AlertSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277C74941AE3E031007C2808 /* AlertSpec.swift */; };
+		278C5D891B0552BC0085351C /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278C5D881B0552BC0085351C /* Settings.swift */; };
 		27B86A621AF30E0F008A60B7 /* OldMemoryVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B86A611AF30E0F008A60B7 /* OldMemoryVc.swift */; };
 		27B86A661AF3AE84008A60B7 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B86A651AF3AE84008A60B7 /* Data.swift */; };
 		27C37B661AE5DA4500BA5328 /* Memory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C37B651AE5DA4500BA5328 /* Memory.swift */; };
@@ -72,6 +73,7 @@
 		2766067D1AF0568000CFD504 /* RouterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterSpec.swift; sourceTree = "<group>"; };
 		277C74921AE3DFFD007C2808 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		277C74941AE3E031007C2808 /* AlertSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertSpec.swift; sourceTree = "<group>"; };
+		278C5D881B0552BC0085351C /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		27B86A611AF30E0F008A60B7 /* OldMemoryVc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OldMemoryVc.swift; sourceTree = "<group>"; };
 		27B86A651AF3AE84008A60B7 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		27C37B631AE5D6F200BA5328 /* butterfly-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "butterfly-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 			children = (
 				276606791AEF02F100CFD504 /* User.swift */,
 				27C37B651AE5DA4500BA5328 /* Memory.swift */,
+				278C5D881B0552BC0085351C /* Settings.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -494,6 +497,7 @@
 				2715030D1AB3D1A500C99C42 /* AppDelegate.swift in Sources */,
 				27576B4E1AE2B4AE00D15F32 /* SettingsVc.swift in Sources */,
 				2766067A1AEF02F100CFD504 /* User.swift in Sources */,
+				278C5D891B0552BC0085351C /* Settings.swift in Sources */,
 				2766067C1AEF056F00CFD504 /* Router.swift in Sources */,
 				271BFA6A1AB3E04100C151F9 /* NewMemoryVc.swift in Sources */,
 				27B86A661AF3AE84008A60B7 /* Data.swift in Sources */,
