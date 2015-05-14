@@ -3,6 +3,39 @@ Parse.Cloud.beforeSave("Memory", function(request, response) {
 	_incrementPosition(request.object, response);
 });
 
+Parse.Cloud.afterSave("Memory", function(request) {
+	_mailMemory(request.object);
+});
+
+function _mailMemory(memory, response) {
+	var Mandrill = require('mandrill');
+	Mandrill.initialize('cyYOeRQuFBaaEo5s8bSCSw');
+
+	Mandrill.sendEmail({
+	  message: _mailMessage(memory)
+	}, {
+	  success: function(httpResponse) {
+	  	console.log(httpResponse);
+	  },
+	  error: function(httpResponse) {
+	  	console.log(httpResponse);
+	    response.error(httpResponse);
+	  }
+	});
+}
+
+function _mailMessage(memory) {
+	var user = Parse.User.current();
+	return {
+    text: memory.get("thoughts"),
+    subject: "Butterfly Daily Memories",
+    from_email: "no-reply@butterfly-memories.com",
+    from_name: "Butterly Memories App",
+    to: [{email: user.get("username")}]
+  }
+}
+
+
 Parse.Cloud.define("randomMemory", function(request, response) {
 	_lastMemoryQuery().find({
 		success: function(objects) {
