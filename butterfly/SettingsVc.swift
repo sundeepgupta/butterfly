@@ -1,9 +1,10 @@
 import UIKit
 
-public class SettingsVc : UIViewController {
+public class SettingsVc : UIViewController, UITextFieldDelegate {
     @IBOutlet private weak var emailField: UITextField!
     @IBOutlet private weak var passwordField: UITextField!
     @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var subjectField: UITextField!
     
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +50,13 @@ public class SettingsVc : UIViewController {
     
     @IBAction func signOut() {
         User.signOut()
+    }
+    
+    
+    //MARK: UITextFieldDelegate
+    public func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true;
     }
     
     
