@@ -156,51 +156,24 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WXK-jN-eUw">
                                 <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JKd-uW-vSB">
-                                        <rect key="frame" x="16" y="13" width="288" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="ThH-lX-2EI" userLabel="email field">
-                                        <rect key="frame" x="16" y="33" width="288" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="2UK-Oj-E2K" id="seL-uU-8sw"/>
-                                        </connections>
-                                    </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L1H-d6-ZG9">
-                                        <rect key="frame" x="16" y="71" width="288" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="eYO-az-PJs" userLabel="password field">
-                                        <rect key="frame" x="16" y="90" width="288" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="2UK-Oj-E2K" id="tcw-sI-Jyp"/>
-                                        </connections>
-                                    </textField>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8nA-Wh-iSI">
-                                        <rect key="frame" x="94" y="128" width="133" height="30"/>
-                                        <state key="normal" title="Update Credentials">
+                                        <rect key="frame" x="84" y="8" width="152" height="30"/>
+                                        <state key="normal" title="Email and password...">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="updateCredentials" destination="2UK-Oj-E2K" eventType="touchUpInside" id="faI-bg-SVn"/>
+                                            <segue destination="Yvu-0j-ws3" kind="show" identifier="toUpdateCredentials" id="pyO-4R-ssG"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Subject for emails" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NFo-xG-HG4">
-                                        <rect key="frame" x="16" y="166" width="288" height="21"/>
+                                        <rect key="frame" x="16" y="54" width="288" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="tz7-TJ-Fug" userLabel="subject field">
-                                        <rect key="frame" x="16" y="187" width="288" height="30"/>
+                                        <rect key="frame" x="16" y="75" width="288" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                         <connections>
@@ -208,7 +181,7 @@
                                         </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vls-Bn-Awh">
-                                        <rect key="frame" x="130" y="225" width="60" height="30"/>
+                                        <rect key="frame" x="130" y="113" width="60" height="30"/>
                                         <state key="normal" title="Sign Out">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -248,8 +221,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="emailField" destination="ThH-lX-2EI" id="p7C-7r-bPc"/>
-                        <outlet property="passwordField" destination="eYO-az-PJs" id="NlA-iQ-OGo"/>
                         <outlet property="saveButton" destination="23X-ny-gSs" id="LOC-V1-GFA"/>
                         <outlet property="subjectField" destination="tz7-TJ-Fug" id="HEL-cY-fgf"/>
                     </connections>
@@ -257,6 +228,76 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wGh-wx-8vU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1955" y="-109"/>
+        </scene>
+        <!--Update Credentials Vc-->
+        <scene sceneID="nzf-yQ-jkl">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Yvu-0j-ws3" customClass="UpdateCredentialsVc" customModule="butterfly" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lS4-4u-YDu"/>
+                        <viewControllerLayoutGuide type="bottom" id="uDq-Tt-uC7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="q1d-Uk-qDY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nf5-Al-hnE">
+                                <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JKd-uW-vSB">
+                                        <rect key="frame" x="16" y="8" width="288" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="ThH-lX-2EI" userLabel="email field">
+                                        <rect key="frame" x="16" y="28" width="288" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="Yvu-0j-ws3" id="A4a-qU-KAd"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L1H-d6-ZG9">
+                                        <rect key="frame" x="16" y="66" width="288" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="eYO-az-PJs" userLabel="password field">
+                                        <rect key="frame" x="16" y="85" width="288" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="Yvu-0j-ws3" id="FaG-97-nWZ"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nf5-Al-hnE" firstAttribute="leading" secondItem="q1d-Uk-qDY" secondAttribute="leading" id="BWp-gX-ZtD"/>
+                            <constraint firstItem="uDq-Tt-uC7" firstAttribute="top" secondItem="nf5-Al-hnE" secondAttribute="bottom" id="e2D-n8-l0E"/>
+                            <constraint firstAttribute="trailing" secondItem="nf5-Al-hnE" secondAttribute="trailing" id="kQa-2z-nai"/>
+                            <constraint firstItem="nf5-Al-hnE" firstAttribute="top" secondItem="lS4-4u-YDu" secondAttribute="bottom" id="l9u-AI-C22"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="oEH-Fg-TI0">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="qMu-Nk-sQw">
+                            <connections>
+                                <action selector="save:" destination="Yvu-0j-ws3" id="vOw-5U-NvT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="emailField" destination="ThH-lX-2EI" id="Bx4-Jk-sbS"/>
+                        <outlet property="passwordField" destination="eYO-az-PJs" id="1hE-pF-pCZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mpZ-rg-hLC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2331" y="-109"/>
         </scene>
         <!--Old Memory-->
         <scene sceneID="eIx-5b-Kn6">

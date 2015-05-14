@@ -1,8 +1,6 @@
 import UIKit
 
 public class SettingsVc : UIViewController, UITextFieldDelegate {
-    @IBOutlet private weak var emailField: UITextField!
-    @IBOutlet private weak var passwordField: UITextField!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var subjectField: UITextField!
     
@@ -13,9 +11,7 @@ public class SettingsVc : UIViewController, UITextFieldDelegate {
     
     @IBAction func updateCredentials() {
         let success = { () -> Void in
-            self.emailField.enabled = true
-            self.passwordField.enabled = true
-            self.saveButton.enabled = true
+            self.performSegueWithIdentifier("toUpdateCredentials", sender: nil)
         }
         
         let failure = { (error: NSError) -> Void in
@@ -24,24 +20,8 @@ public class SettingsVc : UIViewController, UITextFieldDelegate {
             self.presentViewController(alert, animated: true, completion: nil)
         }
 
-        let alert = Alert.password(email: self.emailField.text, success: success, failure: failure)
+        let alert = Alert.password(email: User.email(), success: success, failure: failure)
         self.presentViewController(alert, animated: true, completion: nil)
-    }
-    
-    @IBAction func save() {
-        let email = Utils.trimWhitespaceFromText(self.emailField.text)
-        let password = self.passwordField.text
-    
-        let success = {
-            self.dismiss()
-        }
-        
-        let failure = { (error: NSError) -> Void in
-            let alert = Alert.basic(title: "Whoops!", message: "Error updating email :(\n\n\(error.localizedDescription)")
-            self.presentViewController(alert, animated: true, completion: nil)
-        }
-        
-        User.updateCredentials(email: email, password: password, success: success, failure: failure)
     }
     
     @IBAction func cancel() {
@@ -52,6 +32,11 @@ public class SettingsVc : UIViewController, UITextFieldDelegate {
         User.signOut()
     }
     
+    public override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
+        return false
+        // We want to manually perform the segue.
+    }
+    
     
     //MARK: UITextFieldDelegate
     public func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -60,12 +45,9 @@ public class SettingsVc : UIViewController, UITextFieldDelegate {
     }
     
     
-    
-    
-    
     // MARK: Private
     private func loadSettings() {
-        self.emailField.text = User.email()
+        
     }
     
     private func dismiss() {
