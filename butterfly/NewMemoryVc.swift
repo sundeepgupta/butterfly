@@ -10,11 +10,11 @@ public class NewMemory : UIViewController {
             selector: "adjustTextViewHeight:",
             name: UIKeyboardDidChangeFrameNotification,
             object: nil)
+        
     }
     
     public override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
         self.thoughts.becomeFirstResponder()
     }
     

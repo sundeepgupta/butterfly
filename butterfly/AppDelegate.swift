@@ -33,5 +33,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.router.showSignIn()
         }
     }
+    
+    
+    
+    private func promptForNotifications() {
+        let types: UIUserNotificationType = .Sound | .Alert
+        let notificationSettings = UIUserNotificationSettings(forTypes: types, categories: nil)
+        
+        let app = UIApplication.sharedApplication()
+        app.registerUserNotificationSettings(notificationSettings)
+    }
 }
 
