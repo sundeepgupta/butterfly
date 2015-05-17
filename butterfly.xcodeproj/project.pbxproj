@@ -21,6 +21,7 @@
 		271CA2221AF872BC00B62210 /* global.json in Resources */ = {isa = PBXBuildFile; fileRef = 271CA21F1AF872BC00B62210 /* global.json */; };
 		274BD766C2481AF61892DC6A /* Pods_butterflyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A49BB8426AAB58A3B5B9ACC /* Pods_butterflyTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		27576B4E1AE2B4AE00D15F32 /* SettingsVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27576B4D1AE2B4AE00D15F32 /* SettingsVc.swift */; };
+		275876C41B0813A8007A3760 /* FormatTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275876C31B0813A8007A3760 /* FormatTime.swift */; };
 		276606701AEDC2E900CFD504 /* SignInVcSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2766066F1AEDC2E900CFD504 /* SignInVcSpec.swift */; };
 		276606721AEDC6FE00CFD504 /* UtilsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276606711AEDC6FE00CFD504 /* UtilsSpec.swift */; };
 		2766067A1AEF02F100CFD504 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276606791AEF02F100CFD504 /* User.swift */; };
@@ -66,6 +67,7 @@
 		271CA21D1AF872BC00B62210 /* main.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = main.js; sourceTree = "<group>"; };
 		271CA21F1AF872BC00B62210 /* global.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = global.json; sourceTree = "<group>"; };
 		27576B4D1AE2B4AE00D15F32 /* SettingsVc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVc.swift; sourceTree = "<group>"; };
+		275876C31B0813A8007A3760 /* FormatTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormatTime.swift; sourceTree = "<group>"; };
 		2766066F1AEDC2E900CFD504 /* SignInVcSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInVcSpec.swift; sourceTree = "<group>"; };
 		276606711AEDC6FE00CFD504 /* UtilsSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilsSpec.swift; sourceTree = "<group>"; };
 		276606791AEF02F100CFD504 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 				277C74921AE3DFFD007C2808 /* Alert.swift */,
 				2766067B1AEF056F00CFD504 /* Router.swift */,
 				27B86A651AF3AE84008A60B7 /* Data.swift */,
+				275876C31B0813A8007A3760 /* FormatTime.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -503,6 +506,7 @@
 				27B86A661AF3AE84008A60B7 /* Data.swift in Sources */,
 				27DD26801B0431A300AB05B7 /* UpdateCredentialsVc.swift in Sources */,
 				277C74931AE3DFFD007C2808 /* Alert.swift in Sources */,
+				275876C41B0813A8007A3760 /* FormatTime.swift in Sources */,
 				27B86A621AF30E0F008A60B7 /* OldMemoryVc.swift in Sources */,
 				27C37B661AE5DA4500BA5328 /* Memory.swift in Sources */,
 				271B0CD21AF3B892007787D9 /* SignInVc.swift in Sources */,

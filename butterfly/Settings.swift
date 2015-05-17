@@ -17,4 +17,17 @@ public struct Settings {
         defaults.setObject(subject, forKey: "mailSubject")
         defaults.synchronize()
     }
+    
+    public static func reminderTime() -> NSDate {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let time = defaults.objectForKey("reminderTime") as? NSDate
+        
+        return time ?? NSDate()
+    }
+    
+    public static func saveReminderTime(time: NSDate) {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setObject(time, forKey: "reminderTime")
+        defaults.synchronize()
+    }
 }
