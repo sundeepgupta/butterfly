@@ -24,7 +24,7 @@ public class SignInVc : UIViewController {
         self.emailField.text = Utils.trimWhitespaceFromText(self.emailField.text)
         
         let success = {
-            self.presentingViewController!.dismissViewControllerAnimated(true, completion: nil)
+            self.signIn()
         }
         
         let failure = { (error: NSError) -> Void in
@@ -43,8 +43,9 @@ public class SignInVc : UIViewController {
     @IBAction func signIn() {
         self.emailField.text = Utils.trimWhitespaceFromText(self.emailField.text)
         
-        let success = {
+        let success = { () -> Void in
             self.presentingViewController!.dismissViewControllerAnimated(true, completion: nil)
+            self.promptForNotifications()
         }
         
         let failure = { (error: NSError) -> Void in
@@ -75,5 +76,13 @@ public class SignInVc : UIViewController {
         }
         
         User.resetPassword(email: self.emailField.text, success: success, failure: failure)
+    }
+    
+    
+    // MARK: Private
+    private func promptForNotifications() {
+        let types: UIUserNotificationType = .Sound | .Alert
+        let settings = UIUserNotificationSettings(forTypes: types, categories: nil)
+        UIApplication.sharedApplication().registerUserNotificationSettings(settings)
     }
 }

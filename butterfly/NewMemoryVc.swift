@@ -6,11 +6,7 @@ public class NewMemory : UIViewController {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
-        NSNotificationCenter.defaultCenter().addObserver(self,
-            selector: "adjustTextViewHeight:",
-            name: UIKeyboardDidChangeFrameNotification,
-            object: nil)
-        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "adjustTextViewHeight:", name: UIKeyboardDidChangeFrameNotification, object: nil)   
     }
     
     public override func viewWillAppear(animated: Bool) {

@@ -34,6 +34,7 @@
 		27B86A661AF3AE84008A60B7 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B86A651AF3AE84008A60B7 /* Data.swift */; };
 		27C37B661AE5DA4500BA5328 /* Memory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C37B651AE5DA4500BA5328 /* Memory.swift */; };
 		27C37B681AE5E01D00BA5328 /* MemorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C37B671AE5E01D00BA5328 /* MemorySpec.swift */; };
+		27CA62D81B08F8F0000B9212 /* ScheduleReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CA62D71B08F8F0000B9212 /* ScheduleReminder.swift */; };
 		27DD26801B0431A300AB05B7 /* UpdateCredentialsVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DD267F1B0431A300AB05B7 /* UpdateCredentialsVc.swift */; };
 		27E0BF361AE72F4F001E0B35 /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 27E0BF351AE72F4F001E0B35 /* Secrets.plist */; };
 		27E1F6221AE2E01900FC6475 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E1F6211AE2E01900FC6475 /* Constants.swift */; };
@@ -81,6 +82,7 @@
 		27C37B631AE5D6F200BA5328 /* butterfly-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "butterfly-Bridging-Header.h"; sourceTree = "<group>"; };
 		27C37B651AE5DA4500BA5328 /* Memory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Memory.swift; sourceTree = "<group>"; };
 		27C37B671AE5E01D00BA5328 /* MemorySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemorySpec.swift; sourceTree = "<group>"; };
+		27CA62D71B08F8F0000B9212 /* ScheduleReminder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleReminder.swift; sourceTree = "<group>"; };
 		27DD267F1B0431A300AB05B7 /* UpdateCredentialsVc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateCredentialsVc.swift; sourceTree = "<group>"; };
 		27E0BF351AE72F4F001E0B35 /* Secrets.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = SOURCE_ROOT; };
 		27E1F61F1AE2DF6C00FC6475 /* SettingsVcSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVcSpec.swift; sourceTree = "<group>"; };
@@ -268,6 +270,7 @@
 				2766067B1AEF056F00CFD504 /* Router.swift */,
 				27B86A651AF3AE84008A60B7 /* Data.swift */,
 				275876C31B0813A8007A3760 /* FormatTime.swift */,
+				27CA62D71B08F8F0000B9212 /* ScheduleReminder.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -505,6 +508,7 @@
 				271BFA6A1AB3E04100C151F9 /* NewMemoryVc.swift in Sources */,
 				27B86A661AF3AE84008A60B7 /* Data.swift in Sources */,
 				27DD26801B0431A300AB05B7 /* UpdateCredentialsVc.swift in Sources */,
+				27CA62D81B08F8F0000B9212 /* ScheduleReminder.swift in Sources */,
 				277C74931AE3DFFD007C2808 /* Alert.swift in Sources */,
 				275876C41B0813A8007A3760 /* FormatTime.swift in Sources */,
 				27B86A621AF30E0F008A60B7 /* OldMemoryVc.swift in Sources */,

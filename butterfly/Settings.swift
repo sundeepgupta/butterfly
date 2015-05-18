@@ -26,24 +26,6 @@ public struct Settings {
         defaults.setObject(time, forKey: "reminderTime")
         defaults.synchronize()
         
-        self.scheduleNotification(time)
-    }
-    
-    
-    // MARK: Private
-    private static func scheduleNotification(date: NSDate) {
-        var notification = UILocalNotification()
-        
-        if date.earlierDate(NSDate()).isEqualToDate(date) {
-            let futureDate = date.dateByAddingTimeInterval(24*60*60)
-            notification.fireDate = futureDate
-        } else {
-            notification.fireDate = date
-        }
-
-        notification.alertTitle = "Don't let that butterly get away!"
-        notification.alertBody = "This is your reminder to write your daily memories."
-        
-        UIApplication.sharedApplication().scheduleLocalNotification(notification)
+        ScheduleReminder.perform(time)
     }
 }
