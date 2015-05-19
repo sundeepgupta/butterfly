@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O04-NJ-QiP">
-                                <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="236"/>
                                 <color key="backgroundColor" red="0.90716101540000005" green="0.91222895410000004" blue="0.90209307679999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="136" id="g5N-3g-nVq"/>
@@ -31,21 +31,39 @@
                                     </mask>
                                 </variation>
                             </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WVF-b2-vee">
+                                <rect key="frame" x="0.0" y="300" width="320" height="136"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="136" id="ei6-9j-m72"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="O04-NJ-QiP" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="8UW-Hp-ojY"/>
                             <constraint firstItem="O04-NJ-QiP" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="20" id="BHO-Wo-oou"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="WVF-b2-vee" secondAttribute="bottom" id="Eax-kQ-71g"/>
+                            <constraint firstItem="WVF-b2-vee" firstAttribute="top" secondItem="O04-NJ-QiP" secondAttribute="bottom" id="End-rc-JUQ"/>
+                            <constraint firstAttribute="trailing" secondItem="WVF-b2-vee" secondAttribute="trailing" id="Ev3-vY-tM5"/>
                             <constraint firstItem="O04-NJ-QiP" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="FKx-z0-5DR"/>
+                            <constraint firstItem="WVF-b2-vee" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="NaP-dd-qSn"/>
                             <constraint firstAttribute="trailing" secondItem="O04-NJ-QiP" secondAttribute="trailing" id="Thb-jN-hbr"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="O04-NJ-QiP" secondAttribute="bottom" id="e2A-Tv-yeS"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="BHO-Wo-oou"/>
+                                <exclude reference="e2A-Tv-yeS"/>
                             </mask>
                         </variation>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem title="Photo" id="EFv-hY-hri">
+                            <connections>
+                                <action selector="addPhoto" destination="vXZ-lx-hvc" id="nuA-8i-frm"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" id="ZA9-kf-N8d">
                         <barButtonItem key="leftBarButtonItem" title="Settings" id="Q68-sj-UXU">
                             <connections>
@@ -58,8 +76,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="bottomConstraint" destination="e2A-Tv-yeS" id="hee-QJ-mj6"/>
+                        <outlet property="photoView" destination="WVF-b2-vee" id="Cc6-cR-cxZ"/>
                         <outlet property="thoughts" destination="O04-NJ-QiP" id="2tw-8d-zcB"/>
                         <segue destination="JmM-wh-d3O" kind="show" identifier="toOldMemory" id="4uk-47-h40"/>
                     </connections>
@@ -368,6 +388,7 @@
                             <constraint firstAttribute="trailing" secondItem="lLf-a2-XXg" secondAttribute="trailing" id="kRU-sk-NIa"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="thoughts" destination="lLf-a2-XXg" id="fKD-WN-kpn"/>
                     </connections>

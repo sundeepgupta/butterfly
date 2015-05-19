@@ -1,17 +1,24 @@
 import UIKit
 
-public class NewMemory : UIViewController {
-    @IBOutlet private(set) public weak var thoughts: UITextView!
+public class NewMemory : UIViewController, PickPhotoDelegate {
+    @IBOutlet weak var thoughts: UITextView!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var photoView: UIImageView!
+    lazy var pickPhoto: PickPhoto = PickPhoto(showIn: self, delegate: self)
     
     public override func viewDidLoad() {
         super.viewDidLoad()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "adjustTextViewHeight:", name: UIKeyboardDidChangeFrameNotification, object: nil)   
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "adjustTextViewHeight:", name: UIKeyboardDidChangeFrameNotification, object: nil)
     }
     
     public override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.thoughts.becomeFirstResponder()
+        self.navigationController?.setToolbarHidden(false, animated: false)
+    }
+    
+    @IBAction func addPhoto() {
+        self.pickPhoto.show()
     }
     
     @IBAction func submit() {
@@ -34,5 +41,10 @@ public class NewMemory : UIViewController {
         let keyboardEndY = frameInfo.CGRectValue().origin.y
         self.bottomConstraint.constant = self.view.frame.size.height - keyboardEndY
         self.view.layoutIfNeeded()
+    }
+    
+    // MARK: AddPhotoDelegate
+    func pickedPhoto(photo: UIImage) {
+        self.photoView.image = photo
     }
 }

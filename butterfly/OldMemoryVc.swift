@@ -8,6 +8,12 @@ public class OldMemoryVc: UIViewController {
         self.loadMemory()
     }
     
+    public override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setToolbarHidden(true, animated: false)
+    }
+    
+    
     // MARK: Private
     private func loadMemory() {
         let success = { (memory: Memory) in
