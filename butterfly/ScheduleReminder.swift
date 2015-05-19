@@ -3,6 +3,7 @@ import UIKit
 public struct ScheduleReminder {
     
     public static func perform(date: NSDate) {
+        UIApplication.sharedApplication().cancelAllLocalNotifications()
         let notification = self.notification(date)
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
     }
