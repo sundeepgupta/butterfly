@@ -1,4 +1,4 @@
-import Foundation
+import UIKit
 
 public class Memory {
     public static func fromDictionary(dictionary: Dictionary<String, AnyObject>) -> Memory {
@@ -7,13 +7,11 @@ public class Memory {
 
     
     let thoughts: String
+    let photo: UIImage?
     
-    public init(thoughts: String) {
+    public init(thoughts: String, photo: UIImage? = nil) {
         self.thoughts = thoughts
-    }
-    
-    public func toDictionary() -> Dictionary<String, AnyObject> {
-        return ["thoughts": self.thoughts]
+        self.photo = photo
     }
 }
 

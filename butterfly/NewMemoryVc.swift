@@ -33,7 +33,7 @@ public class NewMemory : UIViewController, PickPhotoDelegate {
             self.presentViewController(alert, animated: true, completion: nil)
         }
         
-        Data.saveMemory(thoughts: self.thoughts.text, success: success, failure: failure)
+        Data.saveMemory(thoughts: self.thoughts.text, photo: self.photoView.image, success: success, failure: failure)
     }
     
     func adjustTextViewHeight(notification: NSNotification) {

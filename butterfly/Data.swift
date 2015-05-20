@@ -1,9 +1,8 @@
-import Foundation
 import Parse
 
 public struct Data {
-    public static func saveMemory(#thoughts: String, success: () -> Void, failure: NSError -> Void) {
-        let memory = Memory(thoughts: thoughts)
+    public static func saveMemory(#thoughts: String, photo: UIImage?, success: () -> Void, failure: NSError -> Void) {
+        let memory = Memory(thoughts: thoughts, photo: photo)
         var error: NSError?
         self.remoteObjectFromMemory(memory).save(&error)
         
@@ -33,10 +32,20 @@ public struct Data {
     
     // MARK: Private
     private static func remoteObjectFromMemory(memory: Memory) -> PFObject {
-        var dictionary = memory.toDictionary()
-        dictionary["user"] = PFUser.currentUser()
-        let className = Utils.stringForTypeOfThing(memory)
-        return PFObject(className: className, dictionary: dictionary)
+        var remoteObject = PFObject(className: Utils.stringForTypeOfThing(memory))
+        remoteObject["user"] = PFUser.currentUser()
+        remoteObject["thoughts"] = memory.thoughts
+        
+        if let photo = memory.photo {
+            remoteObject["photo"] = self.remotePhoto(photo)
+        }
+        
+        return remoteObject
+    }
+    
+    private static func remotePhoto(photo: UIImage) -> PFFile {
+        let photoData = UIImageJPEGRepresentation(photo, 1)
+        return PFFile(data: photoData, contentType: "image/jpeg")
     }
     
     private static func memoryFromRemoteObject(remoteObject: AnyObject?) -> Memory {
