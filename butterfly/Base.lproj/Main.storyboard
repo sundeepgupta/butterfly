@@ -110,14 +110,13 @@
                     <navigationItem key="navigationItem" title="Add A Photo" id="nUl-VT-280">
                         <barButtonItem key="rightBarButtonItem" title="Save" id="OCv-eD-0Zc">
                             <connections>
-                                <action selector="save:" destination="B3I-rY-pKz" id="K7M-mb-0cA"/>
+                                <segue destination="JmM-wh-d3O" kind="show" id="Gtr-OF-uvM"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="photoView" destination="g6B-IG-B0f" id="D7e-j8-5ox"/>
-                        <segue destination="JmM-wh-d3O" kind="show" identifier="toOldMemory" id="hmG-t9-blV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eur-Dj-p3e" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -14,11 +14,12 @@ public class AddPhotoVc : UIViewController, PickPhotoDelegate {
         self.photoView.image = nil
     }
     
-    @IBAction func save(sender: AnyObject) {
-        // maybe do this inside shouldPerformSegue
+    public override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
         
-        let success = {
-            self.performSegueWithIdentifier("toOldMemory", sender: nil)
+        var shouldPerform = false
+        
+        let success = { () -> Void in
+            shouldPerform = true
         }
         
         let failure = { (error: NSError) -> Void in
@@ -29,6 +30,8 @@ public class AddPhotoVc : UIViewController, PickPhotoDelegate {
         }
         
         Data.saveMemory(thoughts: self.thoughts, photo: self.photoView.image, success: success, failure: failure)
+        
+        return shouldPerform
     }
     
     // MARK: AddPhotoDelegate
