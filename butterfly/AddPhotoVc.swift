@@ -6,6 +6,11 @@ public class AddPhotoVc : UIViewController, PickPhotoDelegate {
     lazy var pickPhoto: PickPhoto = PickPhoto(showIn: self, delegate: self)
 
     
+    public override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setToolbarHidden(false, animated: false)
+    }
+    
     @IBAction func add() {
         self.pickPhoto.show()
     }

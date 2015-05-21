@@ -12,7 +12,7 @@ public class NewMemory : UIViewController {
     public override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.thoughtsField.becomeFirstResponder()
-        self.navigationController?.setToolbarHidden(false, animated: false)
+        self.navigationController?.setToolbarHidden(true, animated: false)
     }
     
     public override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

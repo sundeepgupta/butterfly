@@ -11,7 +11,7 @@ public class OldMemoryVc: UIViewController {
     
     public override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.setToolbarHidden(true, animated: false)
+        self.navigationController?.setToolbarHidden(false, animated: false)
     }
     
     
