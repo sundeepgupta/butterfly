@@ -6,7 +6,7 @@ public class NewMemory : UIViewController {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "adjustTextViewHeight:", name: UIKeyboardDidChangeFrameNotification, object: nil)
+        self.registerForNotifications()
     }
     
     public override func viewWillAppear(animated: Bool) {
@@ -15,9 +15,17 @@ public class NewMemory : UIViewController {
         self.navigationController?.setToolbarHidden(true, animated: false)
     }
     
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
     public override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let addPhotoVc = segue.destinationViewController as! AddPhotoVc
         addPhotoVc.thoughts = self.thoughtsField.text
+    }
+    
+    func reset(notification: NSNotification) {
+        self.thoughtsField.text = ""
     }
     
     func adjustTextViewHeight(notification: NSNotification) {
@@ -27,4 +35,10 @@ public class NewMemory : UIViewController {
         self.view.layoutIfNeeded()
     }
     
+    
+    // MARK: Private
+    private func registerForNotifications() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "adjustTextViewHeight:", name: UIKeyboardDidChangeFrameNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reset:", name: Constants.resetNotificationName, object: nil)
+    }
 }

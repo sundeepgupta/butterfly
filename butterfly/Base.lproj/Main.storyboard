@@ -438,6 +438,13 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" title="A Fond Memory" id="fT4-aP-IjY">
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="xZX-7O-xba">
+                            <connections>
+                                <action selector="goHome" destination="JmM-wh-d3O" id="jsR-et-FiK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="photoView" destination="14J-b5-YcS" id="xy2-of-tfD"/>
                         <outlet property="thoughts" destination="lLf-a2-XXg" id="fKD-WN-kpn"/>

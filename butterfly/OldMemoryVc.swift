@@ -4,6 +4,7 @@ public class OldMemoryVc: UIViewController {
     @IBOutlet private weak var thoughts: UITextView!
     @IBOutlet private weak var photoView: UIImageView!
     
+    
     public override func viewDidLoad() {
         super.viewDidLoad()
         self.loadMemory()
@@ -12,6 +13,10 @@ public class OldMemoryVc: UIViewController {
     public override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setToolbarHidden(false, animated: false)
+    }
+    
+    @IBAction func goHome() {
+        NSNotificationCenter.defaultCenter().postNotificationName(Constants.resetNotificationName, object: nil)
     }
     
     

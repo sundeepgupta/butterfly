@@ -8,11 +8,11 @@ public class Router: NSObject {
     public init(rootViewController: UIViewController) {
         self.rootViewController = rootViewController
         super.init()
-        
-        NSNotificationCenter.defaultCenter().addObserver(self,
-            selector: "signedOut:",
-            name: Constants.signOutNotificationName,
-            object: nil)
+        self.registerForNotifications()
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
     public func showSignIn() {
@@ -22,6 +22,18 @@ public class Router: NSObject {
     func signedOut(notification: NSNotification) {
         self.dismissPresentedViews()
         self.showSignIn()
+    }
+    
+    func reset(notification: NSNotification) {
+        let navigationController = rootViewController as! UINavigationController
+        navigationController.popToRootViewControllerAnimated(true)
+    }
+    
+    
+    // MARK: Private
+    private func registerForNotifications() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "signedOut:", name: Constants.signOutNotificationName, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reset:", name: Constants.resetNotificationName, object: nil)
     }
     
     private func dismissPresentedViews() {
