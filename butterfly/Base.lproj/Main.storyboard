@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O04-NJ-QiP">
-                                <rect key="frame" x="0.0" y="64" width="320" height="236"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                                 <color key="backgroundColor" red="0.90716101540000005" green="0.91222895410000004" blue="0.90209307679999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="136" id="g5N-3g-nVq"/>
@@ -31,24 +31,15 @@
                                     </mask>
                                 </variation>
                             </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WVF-b2-vee">
-                                <rect key="frame" x="0.0" y="300" width="320" height="136"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="136" id="ei6-9j-m72"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="O04-NJ-QiP" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="8UW-Hp-ojY"/>
                             <constraint firstItem="O04-NJ-QiP" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="20" id="BHO-Wo-oou"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="WVF-b2-vee" secondAttribute="bottom" id="Eax-kQ-71g"/>
-                            <constraint firstItem="WVF-b2-vee" firstAttribute="top" secondItem="O04-NJ-QiP" secondAttribute="bottom" id="End-rc-JUQ"/>
-                            <constraint firstAttribute="trailing" secondItem="WVF-b2-vee" secondAttribute="trailing" id="Ev3-vY-tM5"/>
                             <constraint firstItem="O04-NJ-QiP" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="FKx-z0-5DR"/>
-                            <constraint firstItem="WVF-b2-vee" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="NaP-dd-qSn"/>
                             <constraint firstAttribute="trailing" secondItem="O04-NJ-QiP" secondAttribute="trailing" id="Thb-jN-hbr"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="O04-NJ-QiP" secondAttribute="bottom" id="e2A-Tv-yeS"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="O04-NJ-QiP" secondAttribute="bottom" id="eZR-kU-5fT"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -57,36 +48,81 @@
                             </mask>
                         </variation>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem title="Photo" id="EFv-hY-hri">
-                            <connections>
-                                <action selector="addPhoto" destination="vXZ-lx-hvc" id="nuA-8i-frm"/>
-                            </connections>
-                        </barButtonItem>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="ZA9-kf-N8d">
                         <barButtonItem key="leftBarButtonItem" title="Settings" id="Q68-sj-UXU">
                             <connections>
                                 <segue destination="EQa-49-WTz" kind="presentation" id="nhs-R4-Szt"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="0sH-ho-TfG">
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="0sH-ho-TfG">
                             <connections>
-                                <action selector="submit" destination="vXZ-lx-hvc" id="muf-hk-hGc"/>
+                                <segue destination="B3I-rY-pKz" kind="show" id="4eA-Qu-HJm"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="bottomConstraint" destination="e2A-Tv-yeS" id="hee-QJ-mj6"/>
-                        <outlet property="photoView" destination="WVF-b2-vee" id="Cc6-cR-cxZ"/>
-                        <outlet property="thoughts" destination="O04-NJ-QiP" id="2tw-8d-zcB"/>
-                        <segue destination="JmM-wh-d3O" kind="show" identifier="toOldMemory" id="4uk-47-h40"/>
+                        <outlet property="thoughtsField" destination="O04-NJ-QiP" id="tpz-wR-YXH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1143" y="431"/>
+        </scene>
+        <!--Add Photo-->
+        <scene sceneID="bE2-Oy-T26">
+            <objects>
+                <viewController title="Add Photo" id="B3I-rY-pKz" customClass="AddPhotoVc" customModule="butterfly" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xu8-Dm-vAi"/>
+                        <viewControllerLayoutGuide type="bottom" id="dYI-US-SMg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MKL-in-eMv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g6B-IG-B0f">
+                                <rect key="frame" x="0.0" y="64" width="320" height="372"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="g6B-IG-B0f" firstAttribute="top" secondItem="xu8-Dm-vAi" secondAttribute="bottom" id="SqM-qK-bFQ"/>
+                            <constraint firstAttribute="trailing" secondItem="g6B-IG-B0f" secondAttribute="trailing" id="ULv-HM-Jfe"/>
+                            <constraint firstItem="g6B-IG-B0f" firstAttribute="leading" secondItem="MKL-in-eMv" secondAttribute="leading" id="ker-qT-oMi"/>
+                            <constraint firstItem="dYI-US-SMg" firstAttribute="top" secondItem="g6B-IG-B0f" secondAttribute="bottom" id="p6K-Ud-70f"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem title="Remove" id="nFd-PW-IY0">
+                            <connections>
+                                <action selector="remove" destination="B3I-rY-pKz" id="aOK-DV-gCr"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="UGO-86-CtA"/>
+                        <barButtonItem title="Add" id="R03-nQ-fOY">
+                            <connections>
+                                <action selector="add" destination="B3I-rY-pKz" id="DP2-Dm-cXG"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Add A Photo" id="nUl-VT-280">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="OCv-eD-0Zc">
+                            <connections>
+                                <action selector="save:" destination="B3I-rY-pKz" id="K7M-mb-0cA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="photoView" destination="g6B-IG-B0f" id="D7e-j8-5ox"/>
+                        <segue destination="JmM-wh-d3O" kind="show" identifier="toOldMemory" id="hmG-t9-blV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eur-Dj-p3e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1576" y="427"/>
         </scene>
         <!--Sign In Vc-->
         <scene sceneID="F71-8A-xCK">
@@ -411,7 +447,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SS7-aO-sNW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1576" y="431"/>
+            <point key="canvasLocation" x="1955" y="427"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="YDc-pd-rG2">

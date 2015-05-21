@@ -50,17 +50,20 @@ public struct Data {
     
     private static func memoryFromRemoteObject(remoteObject: AnyObject?) -> Memory {
         if let object: AnyObject = remoteObject {
-            var photo: UIImage?
-            
-            if let file = object["photo"] as? PFFile {
-                let data = file.getData()
-                photo = UIImage(data: data!)
-            }
-            
-            return Memory(thoughts: object["thoughts"] as! String, photo: photo)
+            let thoughts = object["thoughts"] as! String
+            let photo = self.fetchPhoto(object)
+            return Memory(thoughts: thoughts, photo: photo)
         } else {
             return NullMemory()
         }
     }
+    
+    private static func fetchPhoto(object: AnyObject) -> UIImage? {
+        if let file = object["photo"] as? PFFile {
+            let data = file.getData()
+            return UIImage(data: data!)
+        } else {
+            return nil
+        }
+    }
 }
-

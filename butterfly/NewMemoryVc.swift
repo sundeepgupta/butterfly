@@ -1,10 +1,8 @@
 import UIKit
 
-public class NewMemory : UIViewController, PickPhotoDelegate {
-    @IBOutlet weak var thoughts: UITextView!
-    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
-    @IBOutlet weak var photoView: UIImageView!
-    lazy var pickPhoto: PickPhoto = PickPhoto(showIn: self, delegate: self)
+public class NewMemory : UIViewController {
+    @IBOutlet private weak var thoughtsField: UITextView!
+    @IBOutlet private weak var bottomConstraint: NSLayoutConstraint!
     
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -13,27 +11,13 @@ public class NewMemory : UIViewController, PickPhotoDelegate {
     
     public override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.thoughts.becomeFirstResponder()
+        self.thoughtsField.becomeFirstResponder()
         self.navigationController?.setToolbarHidden(false, animated: false)
     }
     
-    @IBAction func addPhoto() {
-        self.pickPhoto.show()
-    }
-    
-    @IBAction func submit() {
-        let success = {
-            self.performSegueWithIdentifier("toOldMemory", sender: nil)
-        }
-        
-        let failure = { (error: NSError) -> Void in
-            let errorMessage = error.userInfo!["error"] as! String
-            let message = "There was an error saving your memory :(\n\n\(errorMessage)"
-            let alert =  Alert.basic(title: "Darn!", message: message)
-            self.presentViewController(alert, animated: true, completion: nil)
-        }
-        
-        Data.saveMemory(thoughts: self.thoughts.text, photo: self.photoView.image, success: success, failure: failure)
+    public override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let addPhotoVc = segue.destinationViewController as! AddPhotoVc
+        addPhotoVc.thoughts = self.thoughtsField.text
     }
     
     func adjustTextViewHeight(notification: NSNotification) {
@@ -43,8 +27,4 @@ public class NewMemory : UIViewController, PickPhotoDelegate {
         self.view.layoutIfNeeded()
     }
     
-    // MARK: AddPhotoDelegate
-    func pickedPhoto(photo: UIImage) {
-        self.photoView.image = photo
-    }
 }
