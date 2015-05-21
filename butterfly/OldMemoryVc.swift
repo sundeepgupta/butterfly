@@ -1,7 +1,8 @@
 import UIKit
 
 public class OldMemoryVc: UIViewController {
-    @IBOutlet private(set) public weak var thoughts: UITextView!
+    @IBOutlet private weak var thoughts: UITextView!
+    @IBOutlet private weak var photoView: UIImageView!
     
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,8 +17,9 @@ public class OldMemoryVc: UIViewController {
     
     // MARK: Private
     private func loadMemory() {
-        let success = { (memory: Memory) in
+        let success = { (memory: Memory) -> Void in
             self.thoughts.text = memory.thoughts
+            self.photoView.image = memory.photo
         }
         
         let failure = { (error: NSError) -> Void in

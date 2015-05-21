@@ -50,7 +50,14 @@ public struct Data {
     
     private static func memoryFromRemoteObject(remoteObject: AnyObject?) -> Memory {
         if let object: AnyObject = remoteObject {
-            return Memory(thoughts: remoteObject!["thoughts"] as! String)
+            var photo: UIImage?
+            
+            if let file = object["photo"] as? PFFile {
+                let data = file.getData()
+                photo = UIImage(data: data!)
+            }
+            
+            return Memory(thoughts: object["thoughts"] as! String, photo: photo)
         } else {
             return NullMemory()
         }
